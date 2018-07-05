@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.amazon.ask</OriginalElement>
+  <nodes>
+    <node x="975.4930130385487" y="100.0">com.amazon.ask.module</node>
+    <node x="585.5224064625851" y="360.0">com.amazon.ask.Skill</node>
+    <node x="867.2724064625851" y="727.0">com.amazon.ask.servlet</node>
+    <node x="688.4093112244899" y="0.0">com.amazon.ask.exception</node>
+    <node x="974.5224064625851" y="437.5">com.amazon.ask.Skills</node>
+    <node x="666.3177154195012" y="240.0">com.amazon.ask.dispatcher</node>
+    <node x="425.34159580498874" y="100.0">com.amazon.ask.model</node>
+    <node x="57.317715419501155" y="240.0">com.amazon.ask.util</node>
+    <node x="986.0644416099774" y="240.0">com.amazon.ask.builder</node>
+    <node x="341.31771541950116" y="240.0">com.amazon.ask.attributes</node>
+    <node x="975.4930130385487" y="0.0">com.amazon.ask.services</node>
+    <node x="173.31771541950116" y="240.0">com.amazon.ask.request</node>
+    <node x="520.3177154195012" y="240.0">com.amazon.ask.response</node>
+    <node x="20.0" y="682.0">com.amazon.ask.SkillStreamHandler</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.amazon.ask.exception" target="com.amazon.ask.exception">
+      <point x="-48.75" y="15.0" />
+      <point x="704.6593112244899" y="50.0" />
+      <point x="668.4093112244899" y="50.0" />
+      <point x="668.4093112244899" y="15.0" />
+      <point x="-65.0" y="-0.0" />
+    </edge>
+    <edge source="com.amazon.ask.response" target="com.amazon.ask.model">
+      <point x="31.5" y="-15.0" />
+      <point x="614.8177154195012" y="210.0" />
+      <point x="510.09159580498874" y="210.0" />
+      <point x="28.25" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.Skill" target="com.amazon.ask.builder">
+      <point x="69.1875" y="-126.0" />
+      <point x="839.2099064625851" y="320.0" />
+      <point x="1034.3977749433107" y="320.0" />
+      <point x="-9.666666666666629" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.Skill" target="com.amazon.ask.exception">
+      <point x="23.0625" y="-126.0" />
+      <point x="793.0849064625851" y="340.0" />
+      <point x="824.3927154195011" y="340.0" />
+      <point x="824.3927154195011" y="80.0" />
+      <point x="769.6593112244899" y="80.0" />
+      <point x="16.25" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.attributes" target="com.amazon.ask.attributes">
+      <point x="-32.25" y="15.0" />
+      <point x="373.56771541950116" y="290.0" />
+      <point x="321.31771541950116" y="290.0" />
+      <point x="321.31771541950116" y="262.5" />
+      <point x="-64.5" y="7.5" />
+    </edge>
+    <edge source="com.amazon.ask.services" target="com.amazon.ask.services">
+      <point x="-30.0" y="15.0" />
+      <point x="1005.4930130385487" y="50.0" />
+      <point x="955.4930130385487" y="50.0" />
+      <point x="955.4930130385487" y="15.0" />
+      <point x="-60.0" y="-0.0" />
+    </edge>
+    <edge source="com.amazon.ask.module" target="com.amazon.ask.services">
+      <point x="30.0" y="-15.0" />
+      <point x="30.0" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.module" target="com.amazon.ask.builder">
+      <point x="34.28571428571422" y="15.0" />
+      <point x="1069.778727324263" y="220.0" />
+      <point x="1073.0644416099772" y="220.0" />
+      <point x="28.999999999999886" y="-15.0" />
+    </edge>
+    <edge source="com.amazon.ask.Skill" target="com.amazon.ask.util">
+      <point x="-161.4375" y="-126.0" />
+      <point x="608.5849064625851" y="330.0" />
+      <point x="117.31771541950116" y="330.0" />
+      <point x="12.0" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.attributes" target="com.amazon.ask.model">
+      <point x="32.25" y="-15.0" />
+      <point x="438.06771541950116" y="220.0" />
+      <point x="487.4915958049887" y="220.0" />
+      <point x="5.649999999999977" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.Skill" target="com.amazon.ask.Skill">
+      <point x="-138.375" y="126.0" />
+      <point x="631.6474064625851" y="632.0" />
+      <point x="565.5224064625851" y="632.0" />
+      <point x="565.5224064625851" y="486.0" />
+      <point x="-184.5" y="-0.0" />
+    </edge>
+    <edge source="com.amazon.ask.SkillStreamHandler" target="com.amazon.ask.model">
+      <point x="-139.5" y="-60.0" />
+      <point x="66.5" y="662.0" />
+      <point x="26.817715419501155" y="662.0" />
+      <point x="26.817715419501155" y="190.0" />
+      <point x="453.59159580498874" y="190.0" />
+      <point x="-28.25" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.model" target="com.amazon.ask.model">
+      <point x="-39.55" y="15.0" />
+      <point x="442.2915958049888" y="160.0" />
+      <point x="395.34159580498874" y="160.0" />
+      <point x="395.34159580498874" y="107.5" />
+      <point x="-56.5" y="-7.5" />
+    </edge>
+    <edge source="com.amazon.ask.SkillStreamHandler" target="com.amazon.ask.SkillStreamHandler">
+      <point x="0.0" y="60.0" />
+      <point x="206.0" y="822.0" />
+      <point x="0.0" y="822.0" />
+      <point x="0.0" y="742.0" />
+      <point x="-186.0" y="-0.0" />
+    </edge>
+    <edge source="com.amazon.ask.util" target="com.amazon.ask.util">
+      <point x="-36.0" y="15.0" />
+      <point x="69.31771541950116" y="290.0" />
+      <point x="37.317715419501155" y="290.0" />
+      <point x="37.317715419501155" y="255.0" />
+      <point x="-48.0" y="-0.0" />
+    </edge>
+    <edge source="com.amazon.ask.dispatcher" target="com.amazon.ask.model">
+      <point x="0.0" y="-15.0" />
+      <point x="733.3177154195012" y="200.0" />
+      <point x="521.3915958049888" y="200.0" />
+      <point x="39.55000000000001" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.builder" target="com.amazon.ask.builder">
+      <point x="-29.0" y="15.0" />
+      <point x="1015.0644416099774" y="300.0" />
+      <point x="956.0644416099774" y="300.0" />
+      <point x="956.0644416099774" y="247.5" />
+      <point x="-58.0" y="-7.5" />
+    </edge>
+    <edge source="com.amazon.ask.Skill" target="com.amazon.ask.dispatcher">
+      <point x="-69.1875" y="-126.0" />
+      <point x="700.8349064625851" y="340.0" />
+      <point x="733.3177154195012" y="340.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.util" target="com.amazon.ask.exception">
+      <point x="0.0" y="-15.0" />
+      <point x="105.31771541950116" y="180.0" />
+      <point x="50.58431122448985" y="180.0" />
+      <point x="50.58431122448985" y="80.0" />
+      <point x="737.1593112244899" y="80.0" />
+      <point x="-16.25" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.builder" target="com.amazon.ask.module">
+      <point x="-48.333333333333485" y="-15.0" />
+      <point x="995.7311082766439" y="220.0" />
+      <point x="1001.2072987528344" y="220.0" />
+      <point x="-34.285714285714334" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.response" target="com.amazon.ask.response">
+      <point x="31.5" y="15.0" />
+      <point x="614.8177154195012" y="300.0" />
+      <point x="490.3177154195011" y="300.0" />
+      <point x="490.3177154195011" y="247.5" />
+      <point x="-63.0" y="-7.5" />
+    </edge>
+    <edge source="com.amazon.ask.servlet" target="com.amazon.ask.Skill">
+      <point x="0.0" y="-15.0" />
+      <point x="923.7724064625851" y="662.0" />
+      <point x="908.3974064625851" y="662.0" />
+      <point x="138.375" y="126.0" />
+    </edge>
+    <edge source="com.amazon.ask.module" target="com.amazon.ask.exception">
+      <point x="-30.0" y="-15.0" />
+      <point x="1005.4930130385487" y="70.0" />
+      <point x="802.1593112244899" y="70.0" />
+      <point x="48.75" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.Skill" target="com.amazon.ask.model">
+      <point x="-23.0625" y="-126.0" />
+      <point x="746.9599064625851" y="330.0" />
+      <point x="810.8177154195012" y="330.0" />
+      <point x="810.8177154195012" y="190.0" />
+      <point x="532.6915958049888" y="190.0" />
+      <point x="50.849999999999966" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.SkillStreamHandler" target="com.amazon.ask.Skill">
+      <point x="46.5" y="-60.0" />
+      <point x="252.5" y="652.0" />
+      <point x="723.8974064625851" y="652.0" />
+      <point x="-46.125" y="126.0" />
+    </edge>
+    <edge source="com.amazon.ask.builder" target="com.amazon.ask.Skill">
+      <point x="9.666666666666629" y="15.0" />
+      <point x="1053.7311082766441" y="330.0" />
+      <point x="885.3349064625851" y="330.0" />
+      <point x="115.31249999999997" y="-126.0" />
+    </edge>
+    <edge source="com.amazon.ask.SkillStreamHandler" target="com.amazon.ask.util">
+      <point x="-46.5" y="-60.0" />
+      <point x="159.5" y="662.0" />
+      <point x="118.5" y="662.0" />
+      <point x="118.5" y="340.0" />
+      <point x="93.31771541950116" y="340.0" />
+      <point x="-12.0" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.module" target="com.amazon.ask.module">
+      <point x="-51.428571428571445" y="15.0" />
+      <point x="984.0644416099773" y="150.0" />
+      <point x="955.4930130385487" y="150.0" />
+      <point x="955.4930130385487" y="115.0" />
+      <point x="-60.0" y="-0.0" />
+    </edge>
+    <edge source="com.amazon.ask.request" target="com.amazon.ask.model">
+      <point x="0.0" y="-15.0" />
+      <point x="232.31771541950116" y="200.0" />
+      <point x="464.8915958049888" y="200.0" />
+      <point x="-16.94999999999999" y="15.0" />
+    </edge>
+    <edge source="com.amazon.ask.Skills" target="com.amazon.ask.builder">
+      <point x="0.0" y="-48.5" />
+      <point x="1089.022406462585" y="340.0" />
+      <point x="1092.3977749433107" y="340.0" />
+      <point x="48.33333333333337" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="602.0" y="411.0" />
+  <SelectedNodes>
+    <node>com.amazon.ask.module</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
