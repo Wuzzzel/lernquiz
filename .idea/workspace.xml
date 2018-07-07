@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="lernquiz:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="45e0f895-61f9-4ee8-9f99-224d2863285d" name="Default" comment="" />
+    <list default="true" id="45e0f895-61f9-4ee8-9f99-224d2863285d" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/lernquiz_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/lernquiz_jar/lernquiz.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/LernquizStreamHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AnswerOutOfBoundsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/PersistenceExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/UnhandledSkillExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnotherQuestionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnswerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizIntentHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/HelpIntentHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/RepeatIntentHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/UniversalMainMenuHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/model/Attributes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/model/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/model/QuizItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/utils/AnswerOutOfBoundsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/utils/QuestionUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/LernquizStreamHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/LaunchRequestHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/SessionEndedRequestHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/exception/AnswerOutOfBoundsHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/exception/PersistenceExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/exception/UnhandledSkillExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/quiz/QuizAnotherQuestionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/quiz/QuizAnswerHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/quiz/QuizIntentHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/universal/HelpIntentHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/universal/RepeatIntentHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/universal/UniversalMainMenuHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/model/Attributes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/model/Constants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/model/QuizItem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/utils/AnswerOutOfBoundsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/utils/QuestionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/HelloWorldStreamHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/CancelandStopIntentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelloWorldIntentHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelpIntentHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/SessionEndedRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/SessionEndedRequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/speechAssets/SampleUtterances.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/speechAssets/SampleUtterances.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/speechAssets/SkillBuilder.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/speechAssets/SkillBuilder.json" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,7 +72,31 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="IntentSchema.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SampleUtterances.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/SampleUtterances.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="SkillBuilder.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/SkillBuilder.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -28,21 +112,67 @@
       <find>getReason</find>
       <find>getRequest</find>
       <find>getR</find>
+      <find>counter</find>
+      <find>STATE_KEY</find>
+      <find>System.</find>
+      <find>System.ou</find>
+      <find>TODO</find>
+      <find>generateDifficultyRequest</find>
+      <find>generateQuestion</find>
+      <find>UNIVERSAL_QUIT_MESSAGES</find>
+      <find>UNIVERSAL_ANOTHER_QUESTION_DIFFICULTY_MESSAGE</find>
+      <find>EXCEPTION_GRAMMAR_MESSAGE</find>
+      <find>EXCEPTION_GRAMMAR_MESSAGES</find>
+      <find>QUIZ_ANOTHER_QUESTION_NEWBIE_GRAMMAR</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\Users\Tim Pose\Documents\IdeaProjects\lernquiz</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelpIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/SessionEndedRequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelloWorldIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/model/Question.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/model/QuizItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/HelloWorldStreamHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/QuizAnswerHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/QuizIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/QuizDifficultyHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/AnotherQuestionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exceptions/TestException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exceptions/AskSdkException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exceptions/PersistenceExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exceptions/UnhandledSkillExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/utils/AnswerOutOfBoundsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/model/Attributes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AnswerOutOfBoundsHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/CancelandStopIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/UniversalMainMenuHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/LernquizStreamHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/PersistenceExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/UnhandledSkillExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnswerHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnotherQuestionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/RepeatIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/HelpIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/utils/QuestionUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/model/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/speechAssets/SampleUtterances.txt" />
         <option value="$PROJECT_DIR$/src/main/java/speechAssets/SkillBuilder.json" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/CancelandStopIntentHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/HelloWorldStreamHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelloWorldIntentHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelpIntentHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/SessionEndedRequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json" />
       </list>
     </option>
   </component>
@@ -62,7 +192,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -72,6 +202,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,24 +251,85 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="handlers" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lernquiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="handlers" type="462c0819:PsiDirectoryNode" />
+              <item name="quiz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lernquiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="handlers" type="462c0819:PsiDirectoryNode" />
+              <item name="universal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lernquiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lernquiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lernquiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="speechAssets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lernquiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lernquiz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.3" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="main.java.lernquiz.handlers.universal" />
+      <recent name="main.java.lernquiz.handlers" />
+      <recent name="main.java.lernquiz.handlers.quiz" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -168,18 +360,23 @@
     <configuration />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4984375" weight="0.32946146" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5015625" side_tool="true" weight="0.16367476" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35908142" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1703125" />
+      <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32946146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -189,7 +386,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,469 +395,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelloWorldIntentHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1013#1014#0" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelpIntentHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MODULES/mdl-lernquiz">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MODULES</ID>
-          <OriginalElement>mdl-lernquiz</OriginalElement>
-          <nodes>
-            <node x="" y="">mdl-lernquiz</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="62.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JavaScript-modules-diagram/C:/Users/Tim Pose/Documents/IdeaProjects/lernquiz/src/main/java/lernquiz/handlers">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JavaScript-modules-diagram</ID>
-          <OriginalElement>$PROJECT_DIR$/src/main/java/lernquiz/handlers</OriginalElement>
-          <nodes />
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="788.0" y="446.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>All</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>Details</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/main.java.lernquiz.handlers">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>main.java.lernquiz.handlers</OriginalElement>
-          <nodes>
-            <node x="0.0" y="0.0">main.java.lernquiz.handlers.HelpIntentHandler</node>
-            <node x="0.0" y="119.0">main.java.lernquiz.handlers.HelloWorldIntentHandler</node>
-            <node x="0.0" y="238.0">main.java.lernquiz.handlers.LaunchRequestHandler</node>
-            <node x="0.0" y="357.0">main.java.lernquiz.handlers.CancelandStopIntentHandler</node>
-            <node x="0.0" y="476.0">main.java.lernquiz.handlers.SessionEndedRequestHandler</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-400.0" y="70.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/main.java.lernquiz">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>main.java.lernquiz</OriginalElement>
-          <nodes>
-            <node x="" y="">main.java.lernquiz.HelloWorldStreamHandler</node>
-            <node x="" y="">main.java.lernquiz.handlers</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="109.0" y="75.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/SkillBuilder.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/SampleUtterances.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="301.0" y="355.701171875">com</node>
-            <node x="0.0" y="205.701171875">netscape</node>
-            <node x="161.0" y="280.701171875">oracle</node>
-            <node x="145.0" y="430.701171875">test</node>
-            <node x="171.0" y="205.701171875">software</node>
-            <node x="0.0" y="505.701171875">org</node>
-            <node x="340.0" y="205.701171875">mozilla</node>
-            <node x="0.0" y="355.701171875">main</node>
-            <node x="288.0" y="430.701171875">sun</node>
-            <node x="209.0" y="130.701171875">META-INF</node>
-            <node x="142.0" y="505.701171875">jdk</node>
-            <node x="0.0" y="130.701171875">groovyjarjarasm</node>
-            <node x="0.0" y="430.701171875">java</node>
-            <node x="0.0" y="280.701171875">groovy</node>
-            <node x="151.0" y="355.701171875">javax</node>
-            <node x="281.0" y="0.0">groovyjarjarcommonscli</node>
-            <node x="317.0" y="280.701171875">javafx</node>
-            <node x="40.0" y="15.701171875">groovyjarjarantlr</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="groovyjarjarantlr" target="groovyjarjarantlr">
-              <point x="0.0" y="15.0" />
-              <point x="123.0" y="75.701171875" />
-              <point x="10.0" y="75.701171875" />
-              <point x="10.0" y="30.701171875" />
-              <point x="-83.0" y="-0.0" />
-            </edge>
-            <edge source="groovyjarjarcommonscli" target="groovyjarjarcommonscli">
-              <point x="52.0" y="15.0" />
-              <point x="437.0" y="60.0" />
-              <point x="251.0" y="60.0" />
-              <point x="251.0" y="7.5" />
-              <point x="-104.0" y="-7.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-319.0" y="35.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4.jar!/com/amazon/ask/Skill.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-lambda-support/2.3.4/ask-sdk-lambda-support-2.3.4.jar!/com/amazon/ask/SkillStreamHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/com.amazon.ask">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>com.amazon.ask</OriginalElement>
-          <nodes>
-            <node x="919.925751133787" y="100.0">com.amazon.ask.module</node>
-            <node x="503.3617630385488" y="370.0">com.amazon.ask.Skill</node>
-            <node x="769.7367630385488" y="737.0">com.amazon.ask.servlet</node>
-            <node x="652.0985969387757" y="0.0">com.amazon.ask.exception</node>
-            <node x="922.3305130385488" y="447.5">com.amazon.ask.Skills</node>
-            <node x="481.36235827664404" y="230.0">com.amazon.ask.dispatcher</node>
-            <node x="363.31183390022693" y="100.0">com.amazon.ask.model</node>
-            <node x="47.362358276644045" y="230.0">com.amazon.ask.util</node>
-            <node x="930.4971797052156" y="230.0">com.amazon.ask.builder</node>
-            <node x="331.36235827664404" y="230.0">com.amazon.ask.attributes</node>
-            <node x="919.925751133787" y="0.0">com.amazon.ask.services</node>
-            <node x="163.36235827664404" y="230.0">com.amazon.ask.request</node>
-            <node x="665.362358276644" y="230.0">com.amazon.ask.response</node>
-            <node x="20.000000000000057" y="692.0">com.amazon.ask.SkillStreamHandler</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="com.amazon.ask.exception" target="com.amazon.ask.exception">
-              <point x="-48.75" y="15.0" />
-              <point x="668.3485969387757" y="50.0" />
-              <point x="632.0985969387757" y="50.0" />
-              <point x="632.0985969387757" y="15.0" />
-              <point x="-65.0" y="-0.0" />
-            </edge>
-            <edge source="com.amazon.ask.response" target="com.amazon.ask.model">
-              <point x="31.5" y="-15.0" />
-              <point x="759.862358276644" y="180.0" />
-              <point x="470.66183390022695" y="180.0" />
-              <point x="50.85000000000002" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.Skill" target="com.amazon.ask.builder">
-              <point x="69.1875" y="-126.0" />
-              <point x="757.0492630385488" y="330.0" />
-              <point x="978.8305130385488" y="330.0" />
-              <point x="-9.666666666666742" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.Skill" target="com.amazon.ask.exception">
-              <point x="23.0625" y="-126.0" />
-              <point x="710.9242630385488" y="320.0" />
-              <point x="801.862358276644" y="320.0" />
-              <point x="801.862358276644" y="80.0" />
-              <point x="733.3485969387757" y="80.0" />
-              <point x="16.25" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.attributes" target="com.amazon.ask.attributes">
-              <point x="-32.25" y="15.0" />
-              <point x="363.61235827664404" y="280.0" />
-              <point x="311.36235827664404" y="280.0" />
-              <point x="311.36235827664404" y="252.5" />
-              <point x="-64.5" y="7.5" />
-            </edge>
-            <edge source="com.amazon.ask.services" target="com.amazon.ask.services">
-              <point x="-30.0" y="15.0" />
-              <point x="949.925751133787" y="50.0" />
-              <point x="899.925751133787" y="50.0" />
-              <point x="899.925751133787" y="15.0" />
-              <point x="-60.0" y="-0.0" />
-            </edge>
-            <edge source="com.amazon.ask.module" target="com.amazon.ask.services">
-              <point x="30.0" y="-15.0" />
-              <point x="30.0" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.module" target="com.amazon.ask.builder">
-              <point x="51.42857142857133" y="15.0" />
-              <point x="1031.3543225623584" y="210.0" />
-              <point x="1036.8305130385488" y="210.0" />
-              <point x="48.33333333333326" y="-15.0" />
-            </edge>
-            <edge source="com.amazon.ask.Skill" target="com.amazon.ask.util">
-              <point x="-161.4375" y="-126.0" />
-              <point x="526.4242630385488" y="340.0" />
-              <point x="107.36235827664404" y="340.0" />
-              <point x="12.0" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.attributes" target="com.amazon.ask.model">
-              <point x="32.25" y="-15.0" />
-              <point x="428.11235827664404" y="210.0" />
-              <point x="425.4618339002269" y="210.0" />
-              <point x="5.649999999999977" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.Skill" target="com.amazon.ask.Skill">
-              <point x="-138.375" y="126.0" />
-              <point x="549.4867630385488" y="642.0" />
-              <point x="483.3617630385488" y="642.0" />
-              <point x="483.3617630385488" y="496.0" />
-              <point x="-184.5" y="-0.0" />
-            </edge>
-            <edge source="com.amazon.ask.SkillStreamHandler" target="com.amazon.ask.model">
-              <point x="-139.5" y="-60.0" />
-              <point x="66.50000000000006" y="672.0" />
-              <point x="16.862358276644102" y="672.0" />
-              <point x="16.862358276644102" y="190.0" />
-              <point x="391.56183390022693" y="190.0" />
-              <point x="-28.25" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.model" target="com.amazon.ask.model">
-              <point x="-39.55000000000001" y="15.0" />
-              <point x="380.26183390022686" y="160.0" />
-              <point x="333.31183390022693" y="160.0" />
-              <point x="333.31183390022693" y="107.5" />
-              <point x="-56.5" y="-7.5" />
-            </edge>
-            <edge source="com.amazon.ask.util" target="com.amazon.ask.util">
-              <point x="-36.0" y="15.0" />
-              <point x="59.362358276644045" y="280.0" />
-              <point x="27.362358276644045" y="280.0" />
-              <point x="27.362358276644045" y="245.0" />
-              <point x="-48.0" y="-0.0" />
-            </edge>
-            <edge source="com.amazon.ask.SkillStreamHandler" target="com.amazon.ask.SkillStreamHandler">
-              <point x="0.0" y="60.0" />
-              <point x="206.00000000000006" y="832.0" />
-              <point x="0.0" y="832.0" />
-              <point x="0.0" y="752.0" />
-              <point x="-186.0" y="-0.0" />
-            </edge>
-            <edge source="com.amazon.ask.dispatcher" target="com.amazon.ask.model">
-              <point x="0.0" y="-15.0" />
-              <point x="548.362358276644" y="200.0" />
-              <point x="448.06183390022693" y="200.0" />
-              <point x="28.25" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.builder" target="com.amazon.ask.builder">
-              <point x="-29.0" y="15.0" />
-              <point x="959.4971797052156" y="290.0" />
-              <point x="900.4971797052156" y="290.0" />
-              <point x="900.4971797052156" y="237.5" />
-              <point x="-58.0" y="-7.5" />
-            </edge>
-            <edge source="com.amazon.ask.Skill" target="com.amazon.ask.dispatcher">
-              <point x="-23.0625" y="-126.0" />
-              <point x="664.7992630385488" y="310.0" />
-              <point x="548.362358276644" y="310.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.util" target="com.amazon.ask.exception">
-              <point x="0.0" y="-15.0" />
-              <point x="95.36235827664404" y="180.0" />
-              <point x="34.486763038548816" y="180.0" />
-              <point x="34.486763038548816" y="80.0" />
-              <point x="700.8485969387757" y="80.0" />
-              <point x="-16.25" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.builder" target="com.amazon.ask.module">
-              <point x="9.666666666666742" y="-15.0" />
-              <point x="998.1638463718823" y="210.0" />
-              <point x="997.0686082766441" y="210.0" />
-              <point x="17.14285714285711" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.response" target="com.amazon.ask.response">
-              <point x="-31.5" y="15.0" />
-              <point x="696.862358276644" y="280.0" />
-              <point x="645.362358276644" y="280.0" />
-              <point x="645.362358276644" y="252.5" />
-              <point x="-63.0" y="7.5" />
-            </edge>
-            <edge source="com.amazon.ask.module" target="com.amazon.ask.exception">
-              <point x="-30.0" y="-15.0" />
-              <point x="949.925751133787" y="70.0" />
-              <point x="765.8485969387757" y="70.0" />
-              <point x="48.75" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.servlet" target="com.amazon.ask.Skill">
-              <point x="0.0" y="-15.0" />
-              <point x="138.375" y="126.0" />
-            </edge>
-            <edge source="com.amazon.ask.Skill" target="com.amazon.ask.model">
-              <point x="-69.1875" y="-126.0" />
-              <point x="618.6742630385488" y="320.0" />
-              <point x="470.86235827664404" y="320.0" />
-              <point x="470.86235827664404" y="210.0" />
-              <point x="436.76183390022686" y="210.0" />
-              <point x="16.94999999999999" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.SkillStreamHandler" target="com.amazon.ask.Skill">
-              <point x="139.5" y="-60.0" />
-              <point x="345.50000000000006" y="672.0" />
-              <point x="733.9867630385488" y="672.0" />
-              <point x="46.125" y="126.0" />
-            </edge>
-            <edge source="com.amazon.ask.builder" target="com.amazon.ask.Skill">
-              <point x="29.0" y="15.0" />
-              <point x="1017.4971797052156" y="350.0" />
-              <point x="849.2992630385488" y="350.0" />
-              <point x="161.43750000000003" y="-126.0" />
-            </edge>
-            <edge source="com.amazon.ask.SkillStreamHandler" target="com.amazon.ask.util">
-              <point x="-46.5" y="-60.0" />
-              <point x="159.50000000000006" y="672.0" />
-              <point x="118.50000000000006" y="672.0" />
-              <point x="118.50000000000006" y="350.0" />
-              <point x="83.36235827664404" y="350.0" />
-              <point x="-12.0" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.module" target="com.amazon.ask.module">
-              <point x="-51.428571428571445" y="15.0" />
-              <point x="928.4971797052156" y="150.0" />
-              <point x="899.925751133787" y="150.0" />
-              <point x="899.925751133787" y="115.0" />
-              <point x="-60.0" y="-0.0" />
-            </edge>
-            <edge source="com.amazon.ask.request" target="com.amazon.ask.model">
-              <point x="0.0" y="-15.0" />
-              <point x="222.36235827664404" y="200.0" />
-              <point x="402.8618339002269" y="200.0" />
-              <point x="-16.94999999999999" y="15.0" />
-            </edge>
-            <edge source="com.amazon.ask.Skills" target="com.amazon.ask.builder">
-              <point x="0.0" y="-48.5" />
-              <point x="48.33333333333326" y="15.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-98.0" y="215.0" />
-          <SelectedNodes>
-            <node>com.amazon.ask.response</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-            <Category>Inner Classes</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/amazonaws/aws-lambda-java-core/1.0.0/aws-lambda-java-core-1.0.0.jar!/com/amazonaws/services/lambda/runtime/RequestStreamHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk/2.3.4/ask-sdk-2.3.4.jar!/com/amazon/ask/Skills.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk/2.3.4/ask-sdk-2.3.4-sources.jar!/com/amazon/ask/Skills.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -690,16 +423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/HelloWorldStreamHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/dispatcher/request/handler/RequestHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -714,20 +437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/request/Predicates.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/CancelandStopIntentHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/Skill.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -735,6 +444,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-model/1.3.3/ask-sdk-model-1.3.3-sources.jar!/com/amazon/ask/model/RequestEnvelope.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="34" column="54" lean-forward="true" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/dispatcher/request/handler/HandlerInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-613">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelloWorldIntentHandler.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/request/Predicates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-723">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/Tim_Pose.xml" />
     <entry file="file://$PROJECT_DIR$/ask.uml">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -758,7 +497,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="602.0" y="454.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="612.0" y="401.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
@@ -772,27 +511,260 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-model/1.3.3/ask-sdk-model-1.3.3-sources.jar!/com/amazon/ask/model/RequestEnvelope.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/attributes/persistence/PersistenceAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="34" column="54" lean-forward="true" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
+        <state relative-caret-position="221">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/dispatcher/request/handler/HandlerInput.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/attributes/AttributesManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-613">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="409">
+          <caret line="113" column="39" lean-forward="true" selection-start-line="113" selection-start-column="39" selection-end-line="113" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lernquiz.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/dispatcher/exception/ExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/exception/PersistenceException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/exception/UnhandledSkillException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-model/1.3.3/ask-sdk-model-1.3.3-sources.jar!/com/amazon/ask/model/slu/entityresolution/Resolution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="60" column="54" lean-forward="true" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-model/1.3.3/ask-sdk-model-1.3.3-sources.jar!/com/amazon/ask/model/slu/entityresolution/Status.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="42" column="57" lean-forward="true" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-model/1.3.3/ask-sdk-model-1.3.3-sources.jar!/com/amazon/ask/model/slu/entityresolution/StatusCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-core/2.3.4/ask-sdk-core-2.3.4-sources.jar!/com/amazon/ask/exception/AskSdkException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="17" selection-start-line="17" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/utils/AnswerOutOfBoundsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-model/1.3.3/ask-sdk-model-1.3.3-sources.jar!/com/amazon/ask/model/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="93" />
+          <folding>
+            <element signature="e#5747#5748#0" expanded="true" />
+            <element signature="e#5768#5769#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/SessionEndedRequestHandler.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/model/QuizItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/model/Attributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/LernquizStreamHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <caret line="31" column="52" lean-forward="true" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="75" column="39" lean-forward="true" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnswerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="70" column="55" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizIntentHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnotherQuestionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/model/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="53" column="243" selection-start-line="53" selection-start-column="243" selection-end-line="53" selection-end-column="243" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/utils/QuestionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="115" column="9" lean-forward="true" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="60" column="1" lean-forward="true" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AnswerOutOfBoundsHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="79" lean-forward="true" selection-start-line="37" selection-start-column="79" selection-end-line="37" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/PersistenceExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/UnhandledSkillExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="68" lean-forward="true" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/HelpIntentHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/RepeatIntentHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="58" lean-forward="true" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/UniversalMainMenuHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="45" column="67" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/SampleUtterances.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/SkillBuilder.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -802,10 +774,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>lernquiz:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -813,11 +787,11 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3" />
               </list>
             </option>
           </splitter-proportions>
@@ -828,7 +802,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3" />
               </list>
             </option>
           </splitter-proportions>
@@ -840,7 +814,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3" />
               </list>
             </option>
           </splitter-proportions>
@@ -852,7 +826,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3" />
                 <option value="0.6" />
               </list>
             </option>

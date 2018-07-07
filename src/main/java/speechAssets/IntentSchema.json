@@ -1,16 +1,34 @@
 {
   "intents": [
     {
-      "intent": "HelloWorldIntent"
+      "intent": "QuizIntent"
     },
     {
-      "intent": "AMAZON.StopIntent"
+      "intent": "QuizAnswerIntent"
+    },
+    {
+      "intent": "QuizDifficultyIntent"
+    },
+    {
+      "intent": "UniversalMainMenu"
     },
     {
       "intent": "AMAZON.CancelIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.YesIntent"
+    },
+    {
+      "intent": "AMAZON.RepeatIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
     }
   ]
 }

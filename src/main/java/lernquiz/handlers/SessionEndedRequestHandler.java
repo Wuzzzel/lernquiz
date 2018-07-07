@@ -15,11 +15,21 @@ public class SessionEndedRequestHandler implements RequestHandler {
 
     private static Logger LOG = getLogger(SessionEndedRequestHandler.class);
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     @Override
     public boolean canHandle(HandlerInput input) {
         return input.matches(requestType(SessionEndedRequest.class));
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     @Override
     public Optional<Response> handle(HandlerInput input) {
         // any cleanup logic goes here

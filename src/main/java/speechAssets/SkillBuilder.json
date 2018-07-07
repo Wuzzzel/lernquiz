@@ -1,32 +1,158 @@
 {
-  "languageModel": {
-    "intents": [
-      {
-        "name": "AMAZON.CancelIntent",
-        "samples": []
-      },
-      {
-        "name": "AMAZON.HelpIntent",
-        "samples": []
-      },
-      {
-        "name": "AMAZON.StopIntent",
-        "samples": []
-      },
-      {
-        "name": "HelloWorldIntent",
-        "samples": [
-          "say hello",
-          "say hello world",
-          "hello",
-          "say hi",
-          "say hi world",
-          "hi",
-          "how are you"
-        ],
-        "slots": []
-      }
-    ],
-    "invocationName": "hello world"
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "lernquiz",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "QuizIntent",
+          "slots": [],
+          "samples": [
+            "Quiz",
+            "Starte ein Quiz Bitte",
+            "Beginne ein Quiz",
+            "Starte Quiz"
+          ]
+        },
+        {
+          "name": "QuizAnswerIntent",
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "letter",
+              "type": "LETTER"
+            }
+          ],
+          "samples": [
+            "Antwort {number}",
+            "Antwort {letter}",
+            "{number}",
+            "{letter}"
+          ]
+        },
+        {
+          "name": "QuizDifficultyIntent",
+          "slots": [
+            {
+              "name": "difficulty",
+              "type": "DIFFICULTY"
+            }
+          ],
+          "samples": [
+            "{difficulty}"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.RepeatIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "UniversalMainMenu",
+          "slots": [],
+          "samples": [
+            "Hauptmenü"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "LETTER",
+          "values": [
+            {
+              "name": {
+                "value": "E",
+                "synonyms": [
+                  "e"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "D",
+                "synonyms": [
+                  "d"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "C",
+                "synonyms": [
+                  "c"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "B",
+                "synonyms": [
+                  "b"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "A",
+                "synonyms": [
+                  "a"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "DIFFICULTY",
+          "values": [
+            {
+              "name": {
+                "value": "leicht"
+              }
+            },
+            {
+              "name": {
+                "value": "einfach"
+              }
+            },
+            {
+              "name": {
+                "value": "mittel"
+              }
+            },
+            {
+              "name": {
+                "value": "mittelschwer"
+              }
+            },
+            {
+              "name": {
+                "value": "schwer"
+              }
+            }
+          ]
+        }
+      ]
+    }
   }
 }
