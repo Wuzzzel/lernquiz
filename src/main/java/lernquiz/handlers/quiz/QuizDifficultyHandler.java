@@ -44,7 +44,7 @@ public class QuizDifficultyHandler implements RequestHandler {
 
         // TODO: slotAnswer in Datenbank speichern
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
-        String antwort = getSlotAnswer(intentRequest.getIntent().getSlots());
+        String answer = getSlotAnswer(intentRequest.getIntent().getSlots(), "difficulty");
 
         String responseText = Constants.QUIZ_ANOTHER_QUESTION_MESSAGE;
 
@@ -64,15 +64,15 @@ public class QuizDifficultyHandler implements RequestHandler {
      * @param slots
      * @return
      */
-    private String getSlotAnswer(Map<String, Slot> slots) {
+    public static String getSlotAnswer(Map<String, Slot> slots, String slotName) {
         for (Slot slot : slots.values()) {
 
             // Indication of the results of attempting to resolve the user utterance against the defined slot types
             //Bedeutet: Das Wort das vom Nutzer gesagt wurde, wurde zwar erkannt, aber passt nicht in den definierten slot des Intents
-            if(slot.getResolutions().getResolutionsPerAuthority().get(0).getStatus().getCode().equals(StatusCode.ER_SUCCESS_NO_MATCH)) {
+            if(slot.getResolutions() != null && slot.getResolutions().getResolutionsPerAuthority().get(0).getStatus().getCode().equals(StatusCode.ER_SUCCESS_NO_MATCH)) {
                 throw new AskSdkException("Antwort des Nutzers passt nicht zu den Utterances des Intents.");
             }
-            if(slot.getValue() != null && slot.getName().equals("difficulty")){
+            if(slot.getValue() != null && slot.getName().equals(slotName)){
                 return slot.getValue();
             }
         }

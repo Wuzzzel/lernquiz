@@ -4,6 +4,7 @@ import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Response;
+import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import main.java.lernquiz.model.Attributes;
 import main.java.lernquiz.model.Constants;
 import main.java.lernquiz.utils.QuestionUtils;
@@ -40,15 +41,13 @@ public class StatisticIntentHandler implements RequestHandler {
         QuestionUtils.logHandling(input, this.getClass().getName());
 
 
-        //Inhalt + in Exceptions und Universals einbauen
-
-        String responseText = "";
+        String responseText = Constants.STATISTIC_QUESTION_NEWBIE_MESSAGE;
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.STATISTIC_STATE);
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
         sessionAttributes.put(Attributes.RESPONSE_KEY, responseText);
         return input.getResponseBuilder()
                 .withSpeech(responseText)
-                .withReprompt("")
+                .withReprompt(Constants.STATISTIC_QUESTION_REPROMT_MESSAGE)
                 .withShouldEndSession(false)
                 .build();
     }

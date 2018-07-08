@@ -104,16 +104,21 @@ public class QuestionUtils {
         }
     }
 
-    public static Optional<Response> generateUniversalOrExceptionResponse(HandlerInput input, String responseText[], boolean shouldEndSession){
+    public static Optional<Response> generateUniversalOrExceptionResponse(HandlerInput input, TreeMap<String, String> responseText, boolean shouldEndSession){ //String responseText[]
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
 
-        switch ((String) sessionAttributes.get(Attributes.STATE_KEY)){
+        String currentState = (String) sessionAttributes.get(Attributes.STATE_KEY);
+        return Arrays.stream(Attributes.STATES).filter(item -> item.equals(currentState)).findFirst().map(item -> buildResponse(input, responseText.get(item), shouldEndSession)).orElse(buildResponse(input, Constants.GRAMMAR_ERROR_MESSAGE, shouldEndSession));
+
+        /**
+        switch ((String) sessionAttributes.get(Attributes.STATE_KEY)){ //Könnte man natürlich auch mit allen States in einem Array->Stream->filtern ob einer zum gesuchten State passt->responseText ist eine Hashmap mit state als key und dem text als value-> damit dann die mehtode zum erzeugen der response aufrufen
             case Attributes.START_STATE: return buildResponse(input, responseText[0], shouldEndSession);
             case Attributes.QUIZ_STATE: return buildResponse(input, responseText[1], shouldEndSession);
             case Attributes.DIFFICULTY_STATE: return buildResponse(input, responseText[2], shouldEndSession);
             case Attributes.ANOTHER_QUESTION_STATE: return buildResponse(input, responseText[3], shouldEndSession);
+            case Attributes.STATISTIC_STATE: return buildResponse(input, responseText[4], shouldEndSession);
             default: return buildResponse(input, Constants.GRAMMAR_ERROR_MESSAGE, shouldEndSession);
-        }
+        }**/
     }
 
     public static Optional<Response> buildResponse(HandlerInput input, String responseMessage, boolean shouldEndSession){

@@ -33,6 +33,6 @@ public class CancelandStopIntentHandler implements RequestHandler {
     public Optional<Response> handle(HandlerInput input) {
         QuestionUtils.logHandling(input, this.getClass().getName());
 
-        return QuestionUtils.generateUniversalOrExceptionResponse(input, Constants.UNIVERSAL_QUIT_MESSAGES, true);
+        return QuestionUtils.generateUniversalOrExceptionResponse(input, Constants.UNIVERSAL_QUIT, true);
     }
 }

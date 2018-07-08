@@ -50,11 +50,12 @@ public class AskSdkExceptionHandler implements ExceptionHandler {
 
         QuestionUtils.logHandling(input, this.getClass().getName());
 
-        if (grammarExceptionsCount < Constants.GRAMMAR_ERROR_MESSAGES.length) {
-            return QuestionUtils.generateUniversalOrExceptionResponse(input, Constants.GRAMMAR_ERROR_MESSAGES[grammarExceptionsCount], false);
+        if (grammarExceptionsCount < Constants.GRAMMAR_ERROR.size()) {
+            return QuestionUtils.generateUniversalOrExceptionResponse(input, Constants.GRAMMAR_ERROR.get(grammarExceptionsCount), false);
         } else {
             return input.getResponseBuilder()
                     .withSpeech(Constants.GRAMMAR_ERROR_MESSAGE)
+                    .withShouldEndSession(true)
                     .build();
         }
     }

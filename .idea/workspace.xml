@@ -7,60 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45e0f895-61f9-4ee8-9f99-224d2863285d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/lernquiz_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/lernquiz_jar/lernquiz.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/LernquizStreamHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AnswerOutOfBoundsHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/PersistenceExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/UnhandledSkillExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnotherQuestionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnswerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizIntentHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/HelpIntentHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/RepeatIntentHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/UniversalMainMenuHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/model/Attributes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/model/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/model/QuizItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/utils/AnswerOutOfBoundsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/utils/QuestionUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/LernquizStreamHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/LaunchRequestHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/SessionEndedRequestHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/exception/AnswerOutOfBoundsHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/exception/PersistenceExceptionHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/exception/UnhandledSkillExceptionHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/quiz/QuizAnotherQuestionHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/quiz/QuizAnswerHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/quiz/QuizIntentHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/universal/HelpIntentHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/universal/RepeatIntentHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/handlers/universal/UniversalMainMenuHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/model/Attributes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/model/Constants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/model/QuizItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/utils/AnswerOutOfBoundsException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/lernquiz/utils/QuestionUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticPeriodIntentHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/HelloWorldStreamHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/CancelandStopIntentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelloWorldIntentHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/HelpIntentHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/SessionEndedRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/SessionEndedRequestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/speechAssets/SampleUtterances.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/speechAssets/SampleUtterances.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/speechAssets/SkillBuilder.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/speechAssets/SkillBuilder.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/LernquizStreamHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/LernquizStreamHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/HelpIntentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/HelpIntentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/model/Attributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/model/Attributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/model/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/model/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lernquiz/utils/QuestionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lernquiz/utils/QuestionUtils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,26 +29,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="IntentSchema.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json">
+    <leaf>
+      <file leaf-file-name="StatisticIntentHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            <state relative-caret-position="261">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleUtterances.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/SampleUtterances.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="SkillBuilder.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/SkillBuilder.json">
+      <file leaf-file-name="StatisticPeriodIntentHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticPeriodIntentHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+            <state relative-caret-position="403">
+              <caret line="75" column="203" selection-start-line="75" selection-start-column="203" selection-end-line="75" selection-end-column="203" />
             </state>
           </provider>
         </entry>
@@ -124,6 +76,7 @@
       <find>EXCEPTION_GRAMMAR_MESSAGE</find>
       <find>EXCEPTION_GRAMMAR_MESSAGES</find>
       <find>QUIZ_ANOTHER_QUESTION_NEWBIE_GRAMMAR</find>
+      <find>switch</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Tim Pose\Documents\IdeaProjects\lernquiz</dir>
@@ -151,28 +104,29 @@
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exceptions/PersistenceExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exceptions/UnhandledSkillExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/utils/AnswerOutOfBoundsException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/model/Attributes.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AnswerOutOfBoundsHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/CancelandStopIntentHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/UniversalMainMenuHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/LernquizStreamHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/PersistenceExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/UnhandledSkillExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnswerHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnotherQuestionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizIntentHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/RepeatIntentHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/HelpIntentHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/utils/QuestionUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/model/Constants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/speechAssets/SampleUtterances.txt" />
         <option value="$PROJECT_DIR$/src/main/java/speechAssets/SkillBuilder.json" />
         <option value="$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/LernquizStreamHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/utils/QuestionUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/model/Attributes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/HelpIntentHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/model/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticPeriodIntentHandler.java" />
       </list>
     </option>
   </component>
@@ -198,11 +152,10 @@
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -312,7 +265,139 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="lernquiz" type="58d84e3e:PackageViewProjectNode" />
+              <item name="lernquiz" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="lernquiz" type="58d84e3e:PackageViewProjectNode" />
+              <item name="lernquiz" type="616d4139:PackageViewModuleNode" />
+              <item name="main" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="lernquiz" type="58d84e3e:PackageViewProjectNode" />
+              <item name="lernquiz" type="616d4139:PackageViewModuleNode" />
+              <item name="main" type="1f31426a:PackageElementNode" />
+              <item name="java" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="lernquiz" type="58d84e3e:PackageViewProjectNode" />
+              <item name="lernquiz" type="616d4139:PackageViewModuleNode" />
+              <item name="main" type="1f31426a:PackageElementNode" />
+              <item name="java" type="1f31426a:PackageElementNode" />
+              <item name="lernquiz" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="handlers" type="cbb8eebc:String" user="handlers" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="handlers" type="cbb8eebc:String" user="handlers" />
+              <item name="exception" type="cbb8eebc:String" user="exception" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="handlers" type="cbb8eebc:String" user="handlers" />
+              <item name="quiz" type="cbb8eebc:String" user="quiz" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="handlers" type="cbb8eebc:String" user="handlers" />
+              <item name="statistic" type="cbb8eebc:String" user="statistic" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="handlers" type="cbb8eebc:String" user="handlers" />
+              <item name="universal" type="cbb8eebc:String" user="universal" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="model" type="cbb8eebc:String" user="model" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="lernquiz" type="cbb8eebc:String" user="lernquiz" />
+              <item name="utils" type="cbb8eebc:String" user="utils" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -361,7 +446,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4984375" weight="0.32946146" />
@@ -373,7 +457,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1703125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16822916" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32946146" />
@@ -394,21 +478,12 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk/2.3.4/ask-sdk-2.3.4-sources.jar!/com/amazon/ask/Skills.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/amazon/alexa/ask-sdk-lambda-support/2.3.4/ask-sdk-lambda-support-2.3.4-sources.jar!/com/amazon/ask/SkillStreamHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/amazonaws/aws-lambda-java-core/1.0.0/aws-lambda-java-core-1.0.0-sources.jar!/com/amazonaws/services/lambda/runtime/RequestStreamHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -588,10 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="93" />
-          <folding>
-            <element signature="e#5747#5748#0" expanded="true" />
-            <element signature="e#5768#5769#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -609,20 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/model/Attributes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/LernquizStreamHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="52" lean-forward="true" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -633,121 +690,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="75" column="39" lean-forward="true" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnswerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="70" column="55" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizIntentHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnotherQuestionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/model/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="53" column="243" selection-start-line="53" selection-start-column="243" selection-end-line="53" selection-end-column="243" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/utils/QuestionUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="115" column="9" lean-forward="true" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="60" column="1" lean-forward="true" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AnswerOutOfBoundsHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="79" lean-forward="true" selection-start-line="37" selection-start-column="79" selection-end-line="37" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/PersistenceExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/UnhandledSkillExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="68" lean-forward="true" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/HelpIntentHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/RepeatIntentHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" column="58" lean-forward="true" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/UniversalMainMenuHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="45" column="67" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -761,10 +707,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/speechAssets/IntentSchema.json">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizIntentHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/LaunchRequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/LernquizStreamHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="36" column="59" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnotherQuestionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizAnswerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="70" column="55" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/Locale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="497" column="31" selection-start-line="497" selection-start-column="31" selection-end-line="497" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AnswerOutOfBoundsHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="37" column="79" lean-forward="true" selection-start-line="37" selection-start-column="79" selection-end-line="37" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/UnhandledSkillExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="68" lean-forward="true" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/PersistenceExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/quiz/QuizDifficultyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="71" column="48" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/RepeatIntentHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="58" lean-forward="true" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/UniversalMainMenuHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="45" column="67" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticIntentHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/model/Attributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/CancelandStopIntentHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="35" column="105" selection-start-line="35" selection-start-column="105" selection-end-line="35" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/universal/HelpIntentHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/model/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="75" column="74" selection-start-line="75" selection-start-column="74" selection-end-line="75" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/exception/AskSdkExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/utils/QuestionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="109" column="83" lean-forward="true" selection-start-line="109" selection-start-column="83" selection-end-line="109" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lernquiz/handlers/statistic/StatisticPeriodIntentHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="75" column="203" selection-start-line="75" selection-start-column="203" selection-end-line="75" selection-end-column="203" />
         </state>
       </provider>
     </entry>

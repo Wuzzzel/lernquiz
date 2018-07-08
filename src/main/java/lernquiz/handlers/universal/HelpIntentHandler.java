@@ -35,6 +35,6 @@ public class HelpIntentHandler implements RequestHandler {
     public Optional<Response> handle(HandlerInput input) {
         QuestionUtils.logHandling(input, this.getClass().getName());
 
-        return QuestionUtils.generateUniversalOrExceptionResponse(input, Constants.UNIVERSAL_HELP_MESSAGES, false);
+        return QuestionUtils.generateUniversalOrExceptionResponse(input, Constants.UNIVERSAL_HELP, false);
     }
 }

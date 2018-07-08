@@ -12,6 +12,8 @@ import main.java.lernquiz.handlers.quiz.QuizAnotherQuestionHandler;
 import main.java.lernquiz.handlers.quiz.QuizAnswerHandler;
 import main.java.lernquiz.handlers.quiz.QuizDifficultyHandler;
 import main.java.lernquiz.handlers.quiz.QuizIntentHandler;
+import main.java.lernquiz.handlers.statistic.StatisticIntentHandler;
+import main.java.lernquiz.handlers.statistic.StatisticPeriodIntentHandler;
 import main.java.lernquiz.handlers.universal.CancelandStopIntentHandler;
 import main.java.lernquiz.handlers.universal.HelpIntentHandler;
 import main.java.lernquiz.handlers.universal.RepeatIntentHandler;
@@ -31,7 +33,8 @@ public class LernquizStreamHandler extends SkillStreamHandler {
                         new QuizAnswerHandler(),
                         new QuizDifficultyHandler(),
                         new QuizAnotherQuestionHandler(),
-                        //new StatisticIntentHandler(),
+                        new StatisticIntentHandler(),
+                        new StatisticPeriodIntentHandler(),
                         new CancelandStopIntentHandler(),
                         new HelpIntentHandler(),
                         new RepeatIntentHandler(),
