@@ -8,15 +8,14 @@ import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
-import javafx.beans.binding.IntegerBinding;
 import main.java.lernquiz.model.Attributes;
 import main.java.lernquiz.model.Constants;
-import main.java.lernquiz.model.QuizItem;
+import main.java.lernquiz.dao.xmlModel.QuizItem;
 import main.java.lernquiz.utils.AnswerOutOfBoundsException;
 import main.java.lernquiz.utils.QuestionUtils;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 import static com.amazon.ask.request.Predicates.intentName;
 import static com.amazon.ask.request.Predicates.sessionAttribute;
@@ -36,7 +35,6 @@ public class QuizAnswerHandler implements RequestHandler {
         return input.matches(intentName("QuizAnswerIntent").and(sessionAttribute(Attributes.STATE_KEY, Attributes.QUIZ_STATE))); //TODO: Ggf. hier nur nach STATE_KEY schauen, da die Buchstaben (letter) Antwort sonst nicht funktioniert. Oder Buchstabenantwort einfach ganz raus nehmen!
     }
 
-    //TODO: Mit Datenbank umsetzen oder doch mit input.getAttributesManager().savePersistentAttributes(); bzw input.getAttributesManager().setPersistentAttributes();
 
     /**
      * Accepts an input and generates a response
@@ -55,18 +53,18 @@ public class QuizAnswerHandler implements RequestHandler {
         Map<String, String> quizItemMap = (LinkedHashMap<String, String>) sessionAttributes.get(Attributes.QUIZ_ITEM_KEY); // Da man ein JSON zurück bekommt
         QuizItem quizItem = MAPPER.convertValue(quizItemMap, QuizItem.class); // Muss dann mit dem Mapper in das ursprüngliche Objekt gewandelt werden
 
-        boolean correct = compareSlots(intentRequest.getIntent().getSlots(), quizItem.getAnswers().size(), getCorrectAnswer(quizItem)); // Man könnte auch den Key der korrekten Antwort an der bestimmten Stelle im Baum nutzen,
-        // dann hat man sofort den String der richtigen Antwort. Wird das benötigt?
-        // Nicht auffordernder Dialog 05: Antwort bestätigen
+        boolean correct = compareSlots(intentRequest.getIntent().getSlots(), quizItem.getAnswers().size(), getCorrectAnswer(quizItem));
         if (correct) {
             responseText = Constants.QUIZ_ANSWER_CORRECT_MESSAGE;
         } else {
             responseText = Constants.QUIZ_ANSWER_WRONG_MESSAGE;
         }
 
+        //Antwort war korrekt oder nicht in die session(json) schreiben, damit sie nach der Abfrage der Schwierigkeit vorhanden sind, um sie dort zusammen in die Datenbank zu schreiben
+        sessionAttributes.put(Attributes.QUESTION_CORRECT_KEY, correct);
+
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.DIFFICULTY_STATE);
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
-
         sessionAttributes.put(Attributes.RESPONSE_KEY, responseText);
         return QuestionUtils.generateDifficultyResponse(input);
     }
@@ -107,17 +105,8 @@ public class QuizAnswerHandler implements RequestHandler {
      * @return
      */
     public int getCorrectAnswer(QuizItem quizItem) {
-        int i = 1;
-        for (Boolean value : quizItem.getAnswers().values()) {
-            if (value.equals(Boolean.TRUE)) {
-                return i;
-            } else {
-                i++;
-            }
-        }
-        throw new PersistenceException("Es wurde keine richtige Antwort gefunden. Fehler in der XML Datei");
-        //return quizItem.getAnswers().headMap(quizItem.getAnswers().entrySet().stream().filter(item -> item.getValue().equals(Boolean.TRUE)).findFirst().get().getKey()).size();
-        //return quizItem.getAnswers().entrySet().stream().filter(item -> item.getValue().equals(Boolean.TRUE)).findFirst().get().getKey(); // Hier könnte man alle richtigen Antworten suchen, damit theoretisch auch Mulitplechoice unterstützt wird
+        List<Boolean> correctAnswers = quizItem.getCorrectAnswers();
+        return IntStream.range(0, correctAnswers.size()).filter(i -> correctAnswers.get(i) == true)
+                .findFirst().orElseThrow(() -> new PersistenceException("Es wurde keine richtige Antwort gefunden. Fehler in der XML Datei")) + 1;
     }
-
 }

@@ -75,7 +75,7 @@ public class StatisticPeriodIntentHandler implements RequestHandler {
         //TODO: Datenbank abfrage mit dem Datum
         //TODO: Falls keine Daten in dem Zeitraum vorhanden sind erneut nach eingabe Fragen -> Müsste ja egal sein, weil eh nur Daten von dem angebebenen Datum bis zum jetzigen Zeitpunkt abgefragt werden
 
-        String responseText = "Das Angegebene Datum lautet: " + dateString + " " + Constants.MAIN_MENU_NEWBIE_MESSAGE;
+        String responseText = "Das Angegebene Datum lautet: " + Constants.SSML_SAYAS_DATE + dateString + Constants.SSML_SAYAS_ENDTAG + Constants.SSML_BREAK_PARAGRAPH + " " + Constants.MAIN_MENU_NEWBIE_MESSAGE;
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.START_STATE);
         sessionAttributes.put(Attributes.RESPONSE_KEY, responseText);
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);

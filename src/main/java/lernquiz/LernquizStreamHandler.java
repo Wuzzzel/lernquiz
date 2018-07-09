@@ -3,6 +3,8 @@ package main.java.lernquiz;
 import com.amazon.ask.Skill;
 import com.amazon.ask.Skills;
 import com.amazon.ask.SkillStreamHandler;
+import com.amazon.ask.attributes.persistence.impl.DynamoDbPersistenceAdapter;
+import com.amazonaws.services.dynamodbv2.AbstractAmazonDynamoDB;
 import main.java.lernquiz.handlers.*;
 import main.java.lernquiz.handlers.exception.AnswerOutOfBoundsHandler;
 import main.java.lernquiz.handlers.exception.AskSdkExceptionHandler;
@@ -27,6 +29,7 @@ public class LernquizStreamHandler extends SkillStreamHandler {
      */
     private static Skill getSkill() {
         return Skills.standard()
+                .withTableName("lernquiz")
                 .addRequestHandlers(
                         new LaunchRequestHandler(),
                         new QuizIntentHandler(),

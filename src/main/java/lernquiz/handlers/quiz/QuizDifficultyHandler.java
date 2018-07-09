@@ -7,18 +7,29 @@ import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
 import com.amazon.ask.model.slu.entityresolution.StatusCode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import main.java.lernquiz.dao.DataManager;
+import main.java.lernquiz.dao.dynamoDbModel.Entry;
+import main.java.lernquiz.dao.dynamoDbModel.IndividualQuestion;
+import main.java.lernquiz.dao.dynamoDbModel.UserData;
+import main.java.lernquiz.dao.xmlModel.QuizItem;
 import main.java.lernquiz.model.Attributes;
 import main.java.lernquiz.model.Constants;
 import main.java.lernquiz.utils.QuestionUtils;
 
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 
 import static com.amazon.ask.request.Predicates.intentName;
 import static com.amazon.ask.request.Predicates.sessionAttribute;
+import static main.java.lernquiz.dao.DataManager.loadUserData;
 
 public class QuizDifficultyHandler implements RequestHandler {
+
+    private static final ObjectMapper MAPPER = new ObjectMapper();
 
     /**
      * Returns true if the handler can dispatch the current request
@@ -42,12 +53,26 @@ public class QuizDifficultyHandler implements RequestHandler {
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         QuestionUtils.logHandling(input, this.getClass().getName());
 
-        // TODO: slotAnswer in Datenbank speichern
+        // Schwierigkeit aus der Antwort auslesen
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
-        String answer = getSlotAnswer(intentRequest.getIntent().getSlots(), "difficulty");
+        String questionDifficulty = getSlotAnswer(intentRequest.getIntent().getSlots(), "difficulty");
+        Integer questionDifficultyInt = Constants.DIFFICULTY_INTEGER_MAP.get(questionDifficulty); //Zu einem Integer Mappen, da es mehrere Antwortmöglichkeiten gibt, die aber das selbe bedeuten
+
+        // Frage und boolean, ob die richtige Antwort genannt wurde, aus der Session lesen
+        Map<String, String> quizItemMap = (LinkedHashMap<String, String>) sessionAttributes.get(Attributes.QUIZ_ITEM_KEY); // Da man ein JSON zurück bekommt
+        QuizItem quizItem = MAPPER.convertValue(quizItemMap, QuizItem.class); // Muss dann mit dem Mapper in das ursprüngliche Objekt gewandelt werden
+        boolean questionCorrect = (boolean) sessionAttributes.get(Attributes.QUESTION_CORRECT_KEY);
+
+        //UserData laden und Daten der aktuellen Frage speichern
+        UserData userData = loadUserData(input);
+        userData = DataManager.addUserDataToObject(userData, questionDifficultyInt, questionCorrect, quizItem);
+        DataManager.saveUserData(input, userData);
+
+        //Gespeicherten Quiz Attribute wieder aus der Session löschen, damit JSON-Dokument verkleinert wird
+        sessionAttributes.remove(Attributes.QUIZ_ITEM_KEY);
+        sessionAttributes.remove(Attributes.QUESTION_CORRECT_KEY);
 
         String responseText = Constants.QUIZ_ANOTHER_QUESTION_MESSAGE;
-
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.ANOTHER_QUESTION_STATE);
         sessionAttributes.put(Attributes.RESPONSE_KEY, responseText);

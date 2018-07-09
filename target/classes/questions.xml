@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questions>
+    <category>Datenbanken</category>
+    <item>
+        <id>il_3876_qst_100000</id>
+        <question>SQLJ wird für folgende SQL-Befehle verwendet:</question>
+        <answers>
+            <answer>statische Befehle</answer>
+            <answer>dynamische Befehle</answer>
+        </answers>
+        <correctAnswers>
+            <answer>true</answer>
+            <answer>false</answer>
+        </correctAnswers>
+    </item>
+    <item>
+        <id>il_3876_qst_100003</id>
+        <question>Was bedeutet NF2?</question>
+        <answers>
+            <answer>Normal Formal Need Fuel</answer>
+            <answer>Non First Nested Form</answer>
+            <answer>No Food No Fun</answer>
+            <answer>Non First Normal Form</answer>
+        </answers>
+        <correctAnswers>
+            <answer>false</answer>
+            <answer>false</answer>
+            <answer>false</answer>
+            <answer>true</answer>
+        </correctAnswers>
+    </item>
+</questions>
