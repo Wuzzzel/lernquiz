@@ -5,6 +5,7 @@ import com.amazon.ask.model.Response;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 
 import main.java.lernquiz.dao.DataManager;
+import main.java.lernquiz.dao.dynamoDbModel.UserData;
 import main.java.lernquiz.dao.xmlModel.Questions;
 import main.java.lernquiz.dao.xmlModel.QuizItem;
 import main.java.lernquiz.model.*;
@@ -34,17 +35,14 @@ public class QuestionUtils {
             responseText = Constants.QUIZ_CATEGORY_MESSAGE + questions.getCategory() + ". Viel Erfolg! ";
             sessionAttributes.put(Attributes.FIRST_QUESTION_KEY, false);
         }
-        // TODO: Logik welche frage als nächstes folgt
-        //Random r = new Random();
-        //r.Next(list.Count)
-        QuizItem quizItemA = questions.getItem().get(0);
 
+        // Nächste Quizfrage evaluieren
+        String lastQuestionID = (String) sessionAttributes.get(Attributes.LAST_QUIZ_ITEM_KEY); //Die letzte Frage-ID laden, wird als check genutzt, damit die letzte Frage nicht direkt noch mal gewählt wird
+        UserData userData = DataManager.loadUserData(input);
+        QuizItem quizItem = getNextQuestion(userData, questions, lastQuestionID);
 
-        // TODO: Antworten durchwürfeln, damit diese nicht immmer die selbe reihenfolge haben -> ABER die des Objektes! Damit das auch in den späteren Zuständen so ist
-
-        sessionAttributes.put(Attributes.QUIZ_ITEM_KEY, quizItemA);
-
-        responseText += getQuestionText(quizItemA);
+        sessionAttributes.put(Attributes.QUIZ_ITEM_KEY, quizItem);
+        responseText += getQuestionText(quizItem);
         sessionAttributes.put(Attributes.RESPONSE_KEY, responseText); //Wird hier gespeichert, damit es für das Universal Wiederholen bereit gestellt ist
 
         return input.getResponseBuilder()
@@ -52,6 +50,31 @@ public class QuestionUtils {
                 .withReprompt(Constants.QUIZ_QUESTION_REPROMT_MESSAGE)
                 .withShouldEndSession(false)
                 .build();
+    }
+
+
+    public static QuizItem getNextQuestion(UserData userData, Questions questions, String lastQuestionID){
+        Random random = new Random();
+        List<String> hardQuestions = UserDataUtils.getCorrespondingQuestionIDs(userData, Constants.DIFFICULTY_INTEGER_HARD, lastQuestionID);
+        if(!hardQuestions.isEmpty()){ //Prüfe zunächst ob es Fragen gibt, die vom Nutzer zuletzt mit Schwer markiert wurden
+            String questionId =  hardQuestions.get(random.nextInt(hardQuestions.size()));
+            return questions.getQuestionsMap().get(questionId); //Wenn ja gib eine zufällige Frage davon zurück
+        }
+        List<String> mediumQuestions = UserDataUtils.getCorrespondingQuestionIDs(userData, Constants.DIFFICULTY_INTEGER_MEDIUM, lastQuestionID);
+        if(!mediumQuestions.isEmpty()){    //Ansonsten
+            Set<String> answeredQuestions = userData.getQuestions().keySet();
+            String questionId = questions.getQuestionsMap().keySet().stream().filter(item -> !answeredQuestions.contains(item)).findAny() //nimm eine Frage die noch nicht dran kamm
+                    .orElseGet(() -> mediumQuestions.get(random.nextInt(mediumQuestions.size())));    //Oder eine der Mittelschweren
+            return questions.getQuestionsMap().get(questionId); //Wenn ja gib eine zufällige Frage davon zurück
+        }
+        List<String> easyQuestions = UserDataUtils.getCorrespondingQuestionIDs(userData, Constants.DIFFICULTY_INTEGER_EASY, lastQuestionID);
+        if(!easyQuestions.isEmpty()){
+            String questionId =  easyQuestions.get(random.nextInt(easyQuestions.size()));
+            return questions.getQuestionsMap().get(questionId);
+        }
+        List<QuizItem> quizItems = new ArrayList<>(questions.getQuestionsMap().values());   //Wenn alle Listen leer sind, nimm eine Random Frage -> Quasi nur zu beginn des lernens
+        QuizItem randomQuizItem = quizItems.get(random.nextInt(quizItems.size()));
+        return randomQuizItem;
     }
 
 
@@ -63,8 +86,20 @@ public class QuestionUtils {
     public static String getQuestionText(QuizItem quizItem) {
 
         return Constants.QUIZ_QUESTION_MESSAGE + quizItem.getQuestion() + Constants.SSML_BREAK_SENTENCE + " " + Constants.QUIZ_ANSWER_OPTIONS_MESSAGE +
-                quizItem.getAnswersWithIsolator().stream().collect(Collectors.joining(". "));
+                getAnswersWithIsolator(quizItem.getAnswers()).stream().collect(Collectors.joining(". "));
     }
+
+
+    public static List<String> getAnswersWithIsolator(List<String> answers){ //Vll hier raus nehmen und woanders hin schieben, weil das zeug sonst im json output auftaucht
+        char answerLetter = 'A';
+        List<String> answersWithIsolator = answers;
+        for(int i = 0; i < answersWithIsolator.size(); i++){
+            answersWithIsolator.set(i, "Antwort " + answerLetter + ": " + answersWithIsolator.get(i));
+            answerLetter++;
+        }
+        return answersWithIsolator;
+    }
+
 
     /**
      *

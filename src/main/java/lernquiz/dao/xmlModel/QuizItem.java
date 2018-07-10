@@ -55,14 +55,4 @@ public class QuizItem {
     public void setCorrectAnswer(List<Boolean> correctAnswers) {
         this.correctAnswers = correctAnswers;
     }
-
-    public List<String> getAnswersWithIsolator(){ //Vll hier raus nehmen und woanders hin schieben, weil das zeug sonst im json output auftaucht
-        char answerLetter = 'A';
-        List<String> answers = this.answers;
-        for(int i = 0; i < answers.size(); i++){
-            answers.set(i, "Antwort " + answerLetter + ": " + answers.get(i));
-            answerLetter++;
-        }
-        return answers;
-    }
 }

@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class UserData {
 
-    private HashMap<String, IndividualQuestion> questions;
+    private HashMap<String, IndividualQuestion> questions = new HashMap<>();
 
     public UserData(){}
 

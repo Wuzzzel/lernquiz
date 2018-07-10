@@ -57,6 +57,9 @@ public class Constants {
     public static String QUIZ_ANOTHER_QUESTION_REPROMT_MESSAGE = "Entschuldigung, ich habe dich nicht gehört. Sag ja oder nein. Für weitere Informationen sag Hilfe.";
 
     //Hilfe um die schwere der Fragen zu Integers zu mappen
+    public static int DIFFICULTY_INTEGER_EASY = 0;
+    public static int DIFFICULTY_INTEGER_MEDIUM = 1;
+    public static int DIFFICULTY_INTEGER_HARD = 2;
     public static HashMap<String, Integer> DIFFICULTY_INTEGER_MAP = new HashMap<String, Integer>() {{
         put("einfach", 0);
         put("leicht", 0);

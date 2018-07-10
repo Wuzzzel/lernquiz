@@ -16,6 +16,7 @@ import main.java.lernquiz.dao.xmlModel.QuizItem;
 import main.java.lernquiz.model.Attributes;
 import main.java.lernquiz.model.Constants;
 import main.java.lernquiz.utils.QuestionUtils;
+import main.java.lernquiz.utils.UserDataUtils;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -65,8 +66,11 @@ public class QuizDifficultyHandler implements RequestHandler {
 
         //UserData laden und Daten der aktuellen Frage speichern
         UserData userData = loadUserData(input);
-        userData = DataManager.addUserDataToObject(userData, questionDifficultyInt, questionCorrect, quizItem);
+        userData = UserDataUtils.addUserDataToObject(userData, questionDifficultyInt, questionCorrect, quizItem);
         DataManager.saveUserData(input, userData);
+
+        //Die aktuelle Frage-ID speichern, wird als check genutzt, damit die gleiche Frage nicht direkt noch mal gewählt wird
+        sessionAttributes.put(Attributes.LAST_QUIZ_ITEM_KEY, quizItem.getId());
 
         //Gespeicherten Quiz Attribute wieder aus der Session löschen, damit JSON-Dokument verkleinert wird
         sessionAttributes.remove(Attributes.QUIZ_ITEM_KEY);

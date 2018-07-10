@@ -2,30 +2,30 @@ package main.java.lernquiz.dao.xmlModel;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;
+import java.util.Map;
 
 @XmlRootElement(name = "questions")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = { "category", "item" })
+@XmlType(propOrder = { "category", "questionsMap" })
 public class Questions {
 
-    @XmlElement(name = "category")
     private String category;
-    @XmlElement(name = "item")
-    private List<QuizItem> item;
+
+    private Map<String, QuizItem> questionsMap;
 
     public String getCategory() {
         return category;
     }
 
-    public List<QuizItem> getItem() {
-        return item;
+    public Map<String, QuizItem> getQuestionsMap() {
+        return questionsMap;
     }
 
     public void setCategory(String category) {
         this.category = category;
     }
 
-    public void setItem(List<QuizItem> item) {
-        this.item = item;
+    public void setQuestionsMap(Map<String, QuizItem> questionsMap) {
+        this.questionsMap = questionsMap;
     }
 }

@@ -40,6 +40,7 @@ public class LaunchRequestHandler implements RequestHandler {
 
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.START_STATE);
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
+        sessionAttributes.put(Attributes.LAST_QUIZ_ITEM_KEY, ""); //Wird hier schonmal gesetzt, damit später beim ersten get keine null abfrage gemacht werden muss
 
         // TODO: Für First Time User noch eine weitere Ausgabe einbauen -> Feststellen, indem man in die Datenbank schaut ob der User schon Fragen beantwortet hat
         // TODO: Aus Datenbank bekommen ob der User ein Newbie oder Advanced ist und dem entsprechend Ausgaben ändern

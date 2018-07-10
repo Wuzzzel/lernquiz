@@ -1,32 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <questions>
     <category>Datenbanken</category>
-    <item>
-        <id>il_3876_qst_100000</id>
-        <question>SQLJ wird für folgende SQL-Befehle verwendet:</question>
-        <answers>
-            <answer>statische Befehle</answer>
-            <answer>dynamische Befehle</answer>
-        </answers>
-        <correctAnswers>
-            <answer>true</answer>
-            <answer>false</answer>
-        </correctAnswers>
-    </item>
-    <item>
-        <id>il_3876_qst_100003</id>
-        <question>Was bedeutet NF2?</question>
-        <answers>
-            <answer>Normal Formal Need Fuel</answer>
-            <answer>Non First Nested Form</answer>
-            <answer>No Food No Fun</answer>
-            <answer>Non First Normal Form</answer>
-        </answers>
-        <correctAnswers>
-            <answer>false</answer>
-            <answer>false</answer>
-            <answer>false</answer>
-            <answer>true</answer>
-        </correctAnswers>
-    </item>
+    <questionsMap>
+        <entry>
+            <key>il_3876_qst_100000</key>
+            <value>
+                <id>il_3876_qst_100000</id>
+                <question>SQLJ wird für folgende SQL-Befehle verwendet:</question>
+                <answers>
+                    <answer>statische Befehle</answer>
+                    <answer>dynamische Befehle</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>true</answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100001</key>
+            <value>
+                <id>il_3876_qst_100001</id>
+                <question>Segment, Extend, Block und Tablespace gehören zur</question>
+                <answers>
+                    <answer>Hierarchie der logischen Struktur</answer>
+                    <answer>Hierarchie der physischen Struktur</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>true</answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100002</key>
+            <value>
+                <id>il_3876_qst_100002</id>
+                <question>Was bedeutet NF2?</question>
+                <answers>
+                    <answer>Normal Formal Need Fuel</answer>
+                    <answer>Non First Nested Form</answer>
+                    <answer>No Food No Fun</answer>
+                    <answer>Non First Normal Form</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>false</answer>
+                    <answer>false</answer>
+                    <answer>false</answer>
+                    <answer>true</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100003</key>
+            <value>
+                <id>il_3876_qst_100003</id>
+                <question>Was bedeutet die Abkürzung "OID"?</question>
+                <answers>
+                    <answer>Object identifier</answer>
+                    <answer>Object in Database</answer>
+                    <answer>Online identified Database</answer>
+                    <answer>Object introduction</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>true</answer>
+                    <answer>false</answer>
+                    <answer>false</answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100004</key>
+            <value>
+                <id>il_3876_qst_100004</id>
+                <question>Bei der Anfragenoptimierung soll der relationale Ausdruck des SQL-Statements so aufbereitet sein, dass z.b. der Rechen- und Speicherbedarf der einzelnen Operatoren möglichst</question>
+                <answers>
+                    <answer>klein ist</answer>
+                    <answer>groß ist</answer>
+                    <answer>gleich groß ist</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>true</answer>
+                    <answer>false</answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100005</key>
+            <value>
+                <id>il_3876_qst_100005</id>
+                <question>Wie lassen sich mehrwertige Attribute im relationalen Modell darstellen?</question>
+                <answers>
+                    <answer>Attribute können in die Tabelle der Klasse eingetragen werden oder die Liste ist auf eine eigene Tabelle abzubilden</answer>
+                    <answer>Das mehrwertige Attribut darf mehrere Werte besitzen</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>true</answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+    </questionsMap>
 </questions>

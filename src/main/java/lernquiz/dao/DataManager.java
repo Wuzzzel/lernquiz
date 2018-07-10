@@ -37,39 +37,6 @@ public class DataManager {
         input.getAttributesManager().savePersistentAttributes();
     }
 
-    public static UserData addUserDataToObject(UserData userData, int questionDifficultyInt, boolean questionCorrect, QuizItem quizItem){
-        if(userData.getQuestions() == null){ //Wenn noch keine Daten in Datenbank vorhanden sind, lege selber Objekte dafür an
-            IndividualQuestion individualQuestion = setIndividualQuestionData(questionDifficultyInt, questionCorrect);
-            HashMap<String, IndividualQuestion> questions = new HashMap<>();
-            questions.put(quizItem.getId(), individualQuestion);
-            userData.setQuestions(questions);
-        } else if(userData.getQuestions().get(quizItem.getId()) == null){ //Wenn zu der aktuellen Frage noch keine Einträge vorhanden sind, lege selber Objekte dafür an
-            IndividualQuestion individualQuestion = setIndividualQuestionData(questionDifficultyInt, questionCorrect);
-            userData.getQuestions().put(quizItem.getId(), individualQuestion);
-        }
-        //Wenn schon Daten in der Datenbank vorhanden sind, erweitere diese
-        userData.getQuestions().get(quizItem.getId()).setLastQuestionDifficulty(questionDifficultyInt);
-        userData.getQuestions().get(quizItem.getId()).getEntrys().put(String.valueOf(Instant.now().getEpochSecond()).toString(), new Entry(questionDifficultyInt, questionCorrect)); //Ich glaube der nimmt die Uhrzeit aus Irland
-        return userData;
-    }
-
-    /**
-     * Erstellt die Objektstruktur für eine IndividualQuestion und einem dazugehörigen Entry
-     * @param questionDifficultyInt
-     * @param questionCorrect
-     * @return
-     */
-    public static IndividualQuestion setIndividualQuestionData(int questionDifficultyInt, boolean questionCorrect){
-        IndividualQuestion individualQuestion = new IndividualQuestion();
-        individualQuestion.setLastQuestionDifficulty(questionDifficultyInt);
-        HashMap<String, Entry> entrys = new HashMap<>();
-        Entry entry = new Entry(questionDifficultyInt, questionCorrect);
-        entrys.put(String.valueOf(Instant.now().getEpochSecond()), entry);
-        individualQuestion.setEntrys(entrys);
-        return individualQuestion;
-    }
-
-
     public static Questions loadQuestions(){
         Questions questions;
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
