@@ -6,6 +6,8 @@ public class UserData {
 
     private HashMap<String, IndividualQuestion> questions = new HashMap<>();
 
+    private int assistMode = 0;
+
     public UserData(){}
 
     public HashMap<String, IndividualQuestion> getQuestions() {
@@ -14,5 +16,13 @@ public class UserData {
 
     public void setQuestions(HashMap<String, IndividualQuestion> questions) {
         this.questions = questions;
+    }
+
+    public int getAssistMode() {
+        return assistMode;
+    }
+
+    public void setAssistMode(int assistMode) {
+        this.assistMode = assistMode;
     }
 }

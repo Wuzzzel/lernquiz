@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class IndividualQuestion {
 
     private int lastQuestionDifficulty;
-    private HashMap<String, Entry> entrys; // Der String repräsentiert hier den Typ Datetime, also wann die frage beantwortet wurde
+    private HashMap<String, Entry> entries; // Der String repräsentiert hier den Typ Datetime, also wann die frage beantwortet wurde
 
     public IndividualQuestion(){}
 
@@ -16,15 +16,15 @@ public class IndividualQuestion {
         return lastQuestionDifficulty;
     }
 
-    public HashMap<String, Entry> getEntrys() {
-        return entrys;
+    public HashMap<String, Entry> getEntries() {
+        return entries;
     }
 
     public void setLastQuestionDifficulty(int lastQuestionDifficulty) {
         this.lastQuestionDifficulty = lastQuestionDifficulty;
     }
 
-    public void setEntrys(HashMap<String, Entry> entrys) {
-        this.entrys = entrys;
+    public void setEntries(HashMap<String, Entry> entries) {
+        this.entries = entries;
     }
 }

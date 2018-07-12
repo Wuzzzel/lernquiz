@@ -5,10 +5,14 @@ import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.exception.AskSdkException;
 import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Response;
-import main.java.lernquiz.handlers.quiz.QuizDifficultyHandler;
+import main.java.lernquiz.dao.DataManager;
+import main.java.lernquiz.dao.dynamoDbModel.Entry;
+import main.java.lernquiz.dao.dynamoDbModel.UserData;
+import main.java.lernquiz.handlers.quiz.QuizDifficultyIntentHandler;
 import main.java.lernquiz.model.Attributes;
 import main.java.lernquiz.model.Constants;
 import main.java.lernquiz.utils.QuestionUtils;
+import main.java.lernquiz.utils.UserDataUtils;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -41,9 +45,10 @@ public class StatisticPeriodIntentHandler implements RequestHandler {
     public Optional<Response> handle(HandlerInput input) {
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         QuestionUtils.logHandling(input, this.getClass().getName());
+        int assistMode = (int) sessionAttributes.get(Attributes.ASSIST_MODE);
 
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
-        String date = QuizDifficultyHandler.getSlotAnswer(intentRequest.getIntent().getSlots(), "date"); //Todo die Methode getSlotAnswer() wo anders hin packen
+        String date = QuizDifficultyIntentHandler.getSlotAnswer(intentRequest.getIntent().getSlots(), "date"); //Todo die Methode getSlotAnswer() wo anders hin packen
 
         /**
          * name: date
@@ -72,26 +77,37 @@ public class StatisticPeriodIntentHandler implements RequestHandler {
         SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
         String dateString = sdf.format(result);
 
-        //TODO: Datenbank abfrage mit dem Datum
-        //TODO: Falls keine Daten in dem Zeitraum vorhanden sind erneut nach eingabe Fragen -> Müsste ja egal sein, weil eh nur Daten von dem angebebenen Datum bis zum jetzigen Zeitpunkt abgefragt werden
+        //Daten für die Ausgabe sammeln
+        UserData userData = DataManager.loadUserData(input);
+        List<Entry> entries = UserDataUtils.getEntriesToDate(userData, result.getTime());
+        int entriesCount = entries.size();
+        String responseText = "";
+        if(entriesCount > 0) {
+            String correctAnsweredPercent = UserDataUtils.getCorrectAnsweredPercent(entries);
+            long answeredEasyCount = UserDataUtils.getAnsweredDifficultyCount(entries, Constants.DIFFICULTY_INTEGER_EASY);
+            long answeredMediumCount = UserDataUtils.getAnsweredDifficultyCount(entries, Constants.DIFFICULTY_INTEGER_MEDIUM);
+            long answeredHardCount = UserDataUtils.getAnsweredDifficultyCount(entries, Constants.DIFFICULTY_INTEGER_HARD);
 
-        String responseText = "Das Angegebene Datum lautet: " + Constants.SSML_SAYAS_DATE + dateString + Constants.SSML_SAYAS_ENDTAG + Constants.SSML_BREAK_PARAGRAPH + " " + Constants.MAIN_MENU_NEWBIE_MESSAGE;
+            responseText = "Vom " + Constants.SSML_SAYAS_DATE + dateString + Constants.SSML_SAYAS_ENDTAG
+                    + " bis jetzt, hast du bereits " + entriesCount + " Fragen beantwortet. Davon waren "
+                    + correctAnsweredPercent + " Prozent richtig. Außerdem hast du "
+                    + Constants.SSML_SAYAS_CARDINAL + answeredHardCount + Constants.SSML_SAYAS_ENDTAG + " Fragen als Schwer markiert, "
+                    + Constants.SSML_SAYAS_CARDINAL + answeredMediumCount + Constants.SSML_SAYAS_ENDTAG + " als mittelschwer und "
+                    + Constants.SSML_SAYAS_CARDINAL + answeredEasyCount + Constants.SSML_SAYAS_ENDTAG + " als leicht.";
+        } else{
+            responseText = "In diesem Zeitraum wurden keine Fragen beantwortet.";
+        }
+        responseText +=  Constants.SSML_BREAK_PARAGRAPH + " " + Constants.MAIN_MENU_MESSAGE[assistMode];
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.START_STATE);
         sessionAttributes.put(Attributes.RESPONSE_KEY, responseText);
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
         return input.getResponseBuilder()
                 .withSpeech(responseText)
-                .withReprompt(Constants.MAIN_MENU_NEWBIE_REPROMT_MESSAGE)
+                .withReprompt(Constants.MAIN_MENU_REPROMT_MESSAGE[assistMode])
                 .withShouldEndSession(false)
                 .build();
     }
 
-    private static final Map<String, String> DATE_FORMAT_REGEXPS = new HashMap<String, String>() {{
-        put("^\\d{4}-\\d{1,2}-\\d{1,2}$", "yyyy-MM-dd");
-        put("^\\d{4}-\\d{1,2}$", "yyyy-MM");
-        put("^\\d{4}-w\\d{1,2}$", "WEEK_OF_YEAR");
-        put("^\\d{4}$", "yyyy");
-    }};
 
     /**
      * Determine SimpleDateFormat pattern matching with the given date string. Returns null if
@@ -101,9 +117,16 @@ public class StatisticPeriodIntentHandler implements RequestHandler {
      * @see SimpleDateFormat
      */
     public static Optional<String> determineDateFormat(String dateString) {
-        for (String regexp : DATE_FORMAT_REGEXPS.keySet()) {
+        Map<String, String> dateFormatRegex = new HashMap<String, String>() {{
+            put("^\\d{4}-\\d{1,2}-\\d{1,2}$", "yyyy-MM-dd");
+            put("^\\d{4}-\\d{1,2}$", "yyyy-MM");
+            put("^\\d{4}-w\\d{1,2}$", "WEEK_OF_YEAR");
+            put("^\\d{4}$", "yyyy");
+        }};
+
+        for (String regexp : dateFormatRegex.keySet()) {
             if (dateString.toLowerCase().matches(regexp)) {
-                return Optional.of(DATE_FORMAT_REGEXPS.get(regexp));
+                return Optional.of(dateFormatRegex.get(regexp));
             }
         }
         return Optional.empty(); // Unknown format.

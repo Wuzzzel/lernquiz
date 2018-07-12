@@ -16,5 +16,5 @@ public class Attributes {
     public static final String GRAMMAR_EXCEPTIONS_COUNT_KEY = "grammar";
     public static final String QUESTION_CORRECT_KEY = "correct";
     public static final String LAST_QUIZ_ITEM_KEY = "lastItem";
-    public static final String NEWBIE_KEY = "newbie";
+    public static final String ASSIST_MODE = "assistMode";
 }

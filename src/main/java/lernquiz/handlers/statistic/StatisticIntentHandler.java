@@ -39,15 +39,15 @@ public class StatisticIntentHandler implements RequestHandler {
     public Optional<Response> handle(HandlerInput input) {
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         QuestionUtils.logHandling(input, this.getClass().getName());
+        int assistMode = (int) sessionAttributes.get(Attributes.ASSIST_MODE);
 
-
-        String responseText = Constants.STATISTIC_QUESTION_NEWBIE_MESSAGE;
+        String responseText = Constants.STATISTIC_QUESTION_MESSAGE[assistMode];
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.STATISTIC_STATE);
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
         sessionAttributes.put(Attributes.RESPONSE_KEY, responseText);
         return input.getResponseBuilder()
                 .withSpeech(responseText)
-                .withReprompt(Constants.STATISTIC_QUESTION_REPROMT_MESSAGE)
+                .withReprompt(Constants.STATISTIC_QUESTION_REPROMT_MESSAGE[assistMode])
                 .withShouldEndSession(false)
                 .build();
     }

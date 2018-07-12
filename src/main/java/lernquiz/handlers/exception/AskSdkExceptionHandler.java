@@ -43,6 +43,7 @@ public class AskSdkExceptionHandler implements ExceptionHandler {
     @Override
     public Optional<Response> handle(HandlerInput input, Throwable throwable) {
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
+        int assistMode = (int) sessionAttributes.get(Attributes.ASSIST_MODE);
 
         // TODO: Kann der zähler zum defnieren des Neuling, Fortgeschrittenen zeug genutzt werden?
         int grammarExceptionsCount = (int) sessionAttributes.get(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY);
@@ -50,8 +51,8 @@ public class AskSdkExceptionHandler implements ExceptionHandler {
 
         QuestionUtils.logHandling(input, this.getClass().getName());
 
-        if (grammarExceptionsCount < Constants.GRAMMAR_ERROR.size()) {
-            return QuestionUtils.generateUniversalOrExceptionResponse(input, Constants.GRAMMAR_ERROR.get(grammarExceptionsCount), false);
+        if (grammarExceptionsCount < Constants.GRAMMAR_ERROR.get(assistMode).size()) {
+            return QuestionUtils.generateUniversalOrExceptionResponse(input, Constants.GRAMMAR_ERROR.get(assistMode).get(grammarExceptionsCount), false);
         } else {
             return input.getResponseBuilder()
                     .withSpeech(Constants.GRAMMAR_ERROR_MESSAGE)
