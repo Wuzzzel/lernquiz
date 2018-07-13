@@ -19,8 +19,17 @@ import main.java.lernquiz.handlers.universal.*;
 public class LernquizStreamHandler extends SkillStreamHandler {
 
     /**
+     * Diese Klasse stellt den benötigten Handler zum hosten des Skills als AWS Lambda Funktion zur verfügung
+     */
+    public LernquizStreamHandler() {
+        super(getSkill());
+    }
+
+    /**
+     * Erstellt ein Skill Objekt aus den definierten Handlern,
+     * dass anschließend von den Alexa-Servern bei Verwendung des Skills angesprochen wird
      *
-     * @return
+     * @return Skill bestehend aus den definierten Handlern
      */
     private static Skill getSkill() {
         return Skills.standard()
@@ -44,16 +53,6 @@ public class LernquizStreamHandler extends SkillStreamHandler {
                         new UnhandledSkillExceptionHandler(),
                         new AnswerOutOfBoundsHandler(),
                         new AskSdkExceptionHandler())
-                // Add your skill id below
-                //.withSkillId("")
                 .build();
     }
-
-    /**
-     *
-     */
-    public LernquizStreamHandler() {
-        super(getSkill());
-    }
-
 }

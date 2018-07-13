@@ -33,10 +33,11 @@ public class QuizDifficultyIntentHandler implements RequestHandler {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     /**
-     * Returns true if the handler can dispatch the current request
+     * Wird vom SDK aufgerufen, um zu bestimmen, ob dieser Handler in der Lage ist die aktuelle Anfrage zu bearbeiten.
+     * Gibt true zurück, wenn der Handler die aktuelle Anfrage bearbeiten kann, ansonsten false
      *
-     * @param input request envelope containing request, context and state
-     * @return true if the handler can dispatch the current request
+     * @param input Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
+     * @return true, wenn der Handler die aktuelle Anfrage bearbeiten kann
      */
     @Override
     public boolean canHandle(HandlerInput input) {
@@ -44,39 +45,43 @@ public class QuizDifficultyIntentHandler implements RequestHandler {
     }
 
     /**
-     * Accepts an input and generates a response
+     * Wird vom SDK aufgerufen, wenn dieser Antwort-Handler genutzt wird.
+     * Akzeptiert ein HandlerInput und generiert eine optionale Antwort. Verarbeitet die Nutzerangaben bezüglich der Quizfragenschwierigkeit
+     * und fragt die Nutzer ob sie eine weitere Quizfrage hören möchten
      *
-     * @param input request envelope containing request, context and state
-     * @return an optional {@link Response} from the handler.
+     * @param input Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
+     * @return eine optionale Antwort {@link Response} vom Handler
      */
     @Override
     public Optional<Response> handle(HandlerInput input) {
+        //Daten aus Session holen. Log-Handling einrichten
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         QuestionUtils.logHandling(input, this.getClass().getName());
         int assistMode = (int) sessionAttributes.get(Attributes.ASSIST_MODE);
 
-        // Schwierigkeit aus der Antwort auslesen
+        //Schwierigkeit aus der Anfrage auslesen und zu Interger wandeln
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
-        String questionDifficulty = getSlotAnswer(intentRequest.getIntent().getSlots(), "difficulty");
+        String questionDifficulty = QuestionUtils.getSlotAnswer(intentRequest.getIntent().getSlots(), "difficulty");
         Integer questionDifficultyInt = Constants.DIFFICULTY_INTEGER_MAP.get(questionDifficulty); //Zu einem Integer Mappen, da es mehrere Antwortmöglichkeiten gibt, die aber das selbe bedeuten
 
-        // Frage und boolean, ob die richtige Antwort genannt wurde, aus der Session lesen
-        Map<String, String> quizItemMap = (LinkedHashMap<String, String>) sessionAttributes.get(Attributes.QUIZ_ITEM_KEY); // Da man ein JSON zurück bekommt
-        QuizItem quizItem = MAPPER.convertValue(quizItemMap, QuizItem.class); // Muss dann mit dem Mapper in das ursprüngliche Objekt gewandelt werden
+        //Quizfrage und boolean, ob die richtige Antwort genannt wurde, aus der Session lesen
+        Map<String, String> quizItemMap = (LinkedHashMap<String, String>) sessionAttributes.get(Attributes.QUIZ_ITEM_KEY); //Es wird von JSON zu Map gewandelt
+        QuizItem quizItem = MAPPER.convertValue(quizItemMap, QuizItem.class); //Muss dann mit dem Mapper in das ursprüngliche Objekt konvertiert werden
         boolean questionCorrect = (boolean) sessionAttributes.get(Attributes.QUESTION_CORRECT_KEY);
 
-        //UserData laden und Daten der aktuellen Frage speichern
+        //Userdaten laden und Daten der aktuellen Frage speichern
         UserData userData = loadUserData(input);
-        userData = UserDataUtils.addUserDataToObject(userData, questionDifficultyInt, questionCorrect, quizItem);
+        userData = UserDataUtils.addDataToUserData(userData, questionDifficultyInt, questionCorrect, quizItem);
         DataManager.saveUserData(input, userData);
 
-        //Die aktuelle Frage-ID speichern, wird als check genutzt, damit die gleiche Frage nicht direkt noch mal gewählt wird
+        //Die aktuelle Frage-ID speichern, wird später als check genutzt, damit die gleiche Frage nicht direkt noch mal gewählt wird
         sessionAttributes.put(Attributes.LAST_QUIZ_ITEM_KEY, quizItem.getId());
 
-        //Gespeicherten Quiz Attribute wieder aus der Session löschen, damit JSON-Dokument verkleinert wird
+        //Gespeicherte Quiz Attribute wieder aus der Session löschen, damit JSON-Dokument verkleinert wird
         sessionAttributes.remove(Attributes.QUIZ_ITEM_KEY);
         sessionAttributes.remove(Attributes.QUESTION_CORRECT_KEY);
 
+        //Antwort setzten, Intentdaten in Session speichern und return
         String responseText = Constants.QUIZ_ANOTHER_QUESTION_MESSAGE;
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.ANOTHER_QUESTION_STATE);
@@ -86,26 +91,5 @@ public class QuizDifficultyIntentHandler implements RequestHandler {
                 .withReprompt(Constants.QUIZ_ANOTHER_QUESTION_REPROMT_MESSAGE[assistMode])
                 .withShouldEndSession(false)
                 .build();
-    }
-
-
-    /**
-     *
-     * @param slots
-     * @return
-     */
-    public static String getSlotAnswer(Map<String, Slot> slots, String slotName) {  //TODO: Wo anders hin schieben, wird auch min 2 mal genutzt
-        for (Slot slot : slots.values()) {
-
-            // Indication of the results of attempting to resolve the user utterance against the defined slot types
-            //Bedeutet: Das Wort das vom Nutzer gesagt wurde, wurde zwar erkannt, aber passt nicht in den definierten slot des Intents
-            if(slot.getResolutions() != null && slot.getResolutions().getResolutionsPerAuthority().get(0).getStatus().getCode().equals(StatusCode.ER_SUCCESS_NO_MATCH)) {
-                throw new AskSdkException("Antwort des Nutzers passt nicht zu den Utterances des Intents.");
-            }
-            if(slot.getValue() != null && slot.getName().equals(slotName)){
-                return slot.getValue();
-            }
-        }
-        throw new AskSdkException("Keine Daten in Slot vorhanden."); //Exception, da Slots leer sind
     }
 }

@@ -4,11 +4,12 @@ import java.util.HashMap;
 
 public class UserData {
 
-    private HashMap<String, IndividualQuestion> questions = new HashMap<>();
+    private HashMap<String, IndividualQuestion> questions = new HashMap<>(); //Der Key repräsentiert die QuizfragenId
 
     private int assistMode = 0;
 
-    public UserData(){}
+    public UserData() {
+    }
 
     public HashMap<String, IndividualQuestion> getQuestions() {
         return questions;

@@ -1,13 +1,11 @@
 package main.java.lernquiz.dao.xmlModel;
 
-
 import javax.xml.bind.annotation.*;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 @XmlRootElement(name = "item")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = { "id", "question", "answers", "correctAnswers" })
+@XmlType(propOrder = {"id", "question", "answers", "correctAnswers"})
 public class QuizItem {
 
     @XmlElement(name = "id")

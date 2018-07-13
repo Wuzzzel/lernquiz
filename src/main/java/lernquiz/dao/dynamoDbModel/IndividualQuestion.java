@@ -1,14 +1,11 @@
 package main.java.lernquiz.dao.dynamoDbModel;
 
-import org.joda.time.DateTime;
-
-import java.util.Date;
 import java.util.HashMap;
 
 public class IndividualQuestion {
 
     private int lastQuestionDifficulty;
-    private HashMap<String, Entry> entries; // Der String repräsentiert hier den Typ Datetime, also wann die frage beantwortet wurde
+    private HashMap<String, Entry> entries; //Der Key repräsentiert den Typ Datetime, also wann die Quizfrage beantwortet wurde
 
     public IndividualQuestion(){}
 

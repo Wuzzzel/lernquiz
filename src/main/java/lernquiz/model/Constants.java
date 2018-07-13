@@ -187,7 +187,7 @@ public class Constants {
     /**
      * Just-in-Time Tipps
      */
-    public static String JUST_IN_TIME_NEWBIE_MODE = "Kleiner Tipp. Wenn du weniger Hilfestellung benötigst, dann sag Expertenmodus aktiveren.";
-    public static String JUST_IN_TIME_EXPERT_MODE = "Kleiner Tipp. Wenn du mehr Hilfestellung benötigst, dann sag Expertenmodus deaktivieren.";
+    public static String JUST_IN_TIME_NEWBIE_MODE = "Kleiner Tipp. Wenn du mehr Hilfestellung benötigst, dann sag Unterstützung aktiveren.";
+    public static String JUST_IN_TIME_EXPERT_MODE = "Kleiner Tipp. Wenn du weniger Hilfestellung benötigst, dann sag Unterstützung deaktivieren.";
 
 }

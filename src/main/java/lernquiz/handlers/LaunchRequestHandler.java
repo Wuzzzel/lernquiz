@@ -4,7 +4,6 @@ import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.LaunchRequest;
 import com.amazon.ask.model.Response;
-import com.amazon.ask.model.User;
 import main.java.lernquiz.dao.DataManager;
 import main.java.lernquiz.dao.dynamoDbModel.UserData;
 import main.java.lernquiz.model.Constants;
@@ -19,10 +18,11 @@ import static com.amazon.ask.request.Predicates.requestType;
 public class LaunchRequestHandler implements RequestHandler {
 
     /**
-     * Returns true if the handler can dispatch the current request
+     * Wird vom SDK aufgerufen, um zu bestimmen, ob dieser Handler in der Lage ist die aktuelle Anfrage zu bearbeiten.
+     * Gibt true zurück, wenn der Handler die aktuelle Anfrage bearbeiten kann, ansonsten false
      *
-     * @param input request envelope containing request, context and state
-     * @return true if the handler can dispatch the current request
+     * @param input Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
+     * @return true, wenn der Handler die aktuelle Anfrage bearbeiten kann
      */
     @Override
     public boolean canHandle(HandlerInput input) {
@@ -30,34 +30,38 @@ public class LaunchRequestHandler implements RequestHandler {
     }
 
     /**
-     * Accepts an input and generates a response
+     * Wird vom SDK aufgerufen, wenn dieser Antwort-Handler genutzt wird.
+     * Akzeptiert ein HandlerInput und generiert eine optionale Antwort. Behandelt die Nutzerbegrüßung und Ausgabe des Hauptmenüs
      *
-     * @param input request envelope containing request, context and state
-     * @return an optional {@link Response} from the handler.
+     * @param input Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
+     * @return eine optionale Antwort {@link Response} vom Handler
      */
     @Override
     public Optional<Response> handle(HandlerInput input) {
+        //Daten aus Session und Datenbank holen. Log-Handling einrichten
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         QuestionUtils.logHandling(input, this.getClass().getName());
-
         UserData userData = DataManager.loadUserData(input);
         int assistMode = userData.getAssistMode();
         sessionAttributes.put(Attributes.ASSIST_MODE, assistMode); //Unterstützungsmodus in Session schreiben, damit nicht in jedem Handler auf die Datenbank zugegriffen werden muss
 
+        //Antwort-String mit Willkommensnachricht vorbereiten
+        String responseText = Constants.WELCOME_MESSAGE + " ";
+        //Schauen ob der Nutzer ganz neu im Skill ist, dann extra Nachricht ausgeben
+        if (userData.getQuestions().size() == 0) responseText += Constants.FIRST_TIME_USER_MESSAGE + " ";
+
+        //Daten dieses Intents in die Session schreiben
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.START_STATE);
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
-        sessionAttributes.put(Attributes.LAST_QUIZ_ITEM_KEY, ""); //Wird hier schonmal gesetzt, damit später beim ersten get keine null abfrage gemacht werden muss
+        sessionAttributes.put(Attributes.LAST_QUIZ_ITEM_KEY, ""); //Wird hier schonmal gesetzt, damit später beim ersten get() auf das Attribut keine null-Abfrage gemacht werden muss
 
-        // TODO: Für First Time User noch eine weitere Ausgabe einbauen -> Feststellen, indem man in die Datenbank schaut ob der User schon Fragen beantwortet hat
-        // TODO: Aus Datenbank bekommen ob der User ein Newbie oder Advanced ist und dem entsprechend Ausgaben ändern
-
-        String responseText = Constants.WELCOME_MESSAGE + " " + Constants.MAIN_MENU_INITIAL_MESSAGE[assistMode];
-        sessionAttributes.put(Attributes.RESPONSE_KEY, responseText); //Wird hier gespeichert, damit es für das Universal Wiederholen bereit gestellt ist
+        //Antwort-String finalisieren, in Session schreiben und return
+        responseText += Constants.MAIN_MENU_INITIAL_MESSAGE[assistMode];
+        sessionAttributes.put(Attributes.RESPONSE_KEY, responseText); //Wird hier gespeichert, damit es für das Universal-Wiederholen bereit gestellt ist
         return input.getResponseBuilder()
                 .withSpeech(responseText)
                 .withReprompt(Constants.MAIN_MENU_REPROMT_MESSAGE[assistMode])
                 .withShouldEndSession(false)
                 .build();
     }
-
 }

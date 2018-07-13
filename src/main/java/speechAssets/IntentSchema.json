@@ -10,7 +10,16 @@
       "intent": "QuizDifficultyIntent"
     },
     {
-      "intent": "UniversalMainMenu"
+      "intent": "UniversalMainMenuIntent"
+    },
+    {
+      "intent": "StatisticIntent"
+    },
+    {
+      "intent": "StatisticPeriodIntent"
+    },
+    {
+      "intent": "AssistModeIntent"
     },
     {
       "intent": "AMAZON.CancelIntent"

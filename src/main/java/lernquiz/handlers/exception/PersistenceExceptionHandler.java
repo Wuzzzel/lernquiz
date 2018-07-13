@@ -2,7 +2,6 @@ package main.java.lernquiz.handlers.exception;
 
 import com.amazon.ask.dispatcher.exception.ExceptionHandler;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
-import com.amazon.ask.exception.AskSdkException;
 import com.amazon.ask.exception.PersistenceException;
 import com.amazon.ask.model.Response;
 import main.java.lernquiz.model.Constants;
@@ -16,15 +15,34 @@ public class PersistenceExceptionHandler implements ExceptionHandler {
 
     static final Logger logger = LogManager.getLogger(PersistenceExceptionHandler.class);
 
+    /**
+     * Wird vom SDK aufgerufen, um zu bestimmen, ob dieser Handler in der Lage ist die aktuelle Anfrage zu bearbeiten.
+     * Gibt true zurück, wenn der Handler die aktuelle Anfrage bearbeiten kann, ansonsten false
+     *
+     * @param input     Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
+     * @param throwable geworfene Exception
+     * @return true, wenn der Handler die aktuelle Anfrage bearbeiten kann
+     */
     @Override
     public boolean canHandle(HandlerInput input, Throwable throwable) {
         return throwable instanceof PersistenceException;
     }
 
+    /**
+     * Wird vom SDK aufgerufen, wenn dieser Antwort-Handler genutzt wird.
+     * Akzeptiert ein HandlerInput und generiert eine optionale Antwort. Behandelt das Geschehen bei dem auftreten einer PersistenceException
+     *
+     * @param input     Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
+     * @param throwable geworfene Exception
+     * @return eine optionale Antwort {@link Response} vom Handler
+     */
     @Override
     public Optional<Response> handle(HandlerInput input, Throwable throwable) {
+        //Logge den aktuellen Zustand
         QuestionUtils.logHandling(input, this.getClass().getName());
         logger.error(throwable);
+
+        //Return Fehlerausgabe an Nutzer
         return input.getResponseBuilder()
                 .withSpeech(Constants.EXCEPTION_PERSISTENCE_MESSAGE)
                 .build();

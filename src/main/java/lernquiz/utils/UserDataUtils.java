@@ -4,36 +4,43 @@ import main.java.lernquiz.dao.dynamoDbModel.Entry;
 import main.java.lernquiz.dao.dynamoDbModel.IndividualQuestion;
 import main.java.lernquiz.dao.dynamoDbModel.UserData;
 import main.java.lernquiz.dao.xmlModel.QuizItem;
-import main.java.lernquiz.model.Constants;
-import org.joda.time.DateTime;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class UserDataUtils {
 
-    public static UserData addUserDataToObject(UserData userData, int questionDifficultyInt, boolean questionCorrect, QuizItem quizItem){
-        if(userData.getQuestions().get(quizItem.getId()) == null){ //Wenn zu der aktuellen Frage noch keine Einträge vorhanden sind, lege selber Objekte dafür an
+    /**
+     * Erweitert das übergebene Attribut userData, um einen Eintrag (Entry) mit Hilfe der weiteren übergebenen Attribute
+     *
+     * @param userData              Objekt das um einen Eintrag erweitert werden soll
+     * @param questionDifficultyInt zu setzender Wert des neuen Eintrags
+     * @param questionCorrect       zu setzender Wert des neuen Eintrags
+     * @param quizItem              zum neuen Eintrag zugehörige Quizfrage
+     * @return erweitertes UserData Objekt {@link UserData}
+     */
+    public static UserData addDataToUserData(UserData userData, int questionDifficultyInt, boolean questionCorrect, QuizItem quizItem) {
+        if (userData.getQuestions().get(quizItem.getId()) == null) { //Wenn zu der Quizfrage (quizItem) noch keine Einträge in userData vorhanden sind, lege selber Objekte dafür an
             IndividualQuestion individualQuestion = setIndividualQuestionData(questionDifficultyInt, questionCorrect);
             userData.getQuestions().put(quizItem.getId(), individualQuestion);
         }
-        //Wenn schon Daten in der Datenbank vorhanden sind, erweitere diese
+        //Wenn schon Einträge im userData Objekt vorhanden sind, erweitere diese
         userData.getQuestions().get(quizItem.getId()).setLastQuestionDifficulty(questionDifficultyInt);
-        userData.getQuestions().get(quizItem.getId()).getEntries().put(String.valueOf(Instant.now().toEpochMilli()).toString(), new Entry(questionDifficultyInt, questionCorrect)); //Ich glaube der nimmt die Uhrzeit aus Irland
+        userData.getQuestions().get(quizItem.getId()).getEntries().put(String.valueOf(Instant.now().toEpochMilli()).toString(), new Entry(questionDifficultyInt, questionCorrect));
         return userData;
     }
 
     /**
-     * Erstellt die Objektstruktur für eine IndividualQuestion und einem dazugehörigen Entry
-     * @param questionDifficultyInt
-     * @param questionCorrect
-     * @return
+     * Erstellt die Objektstruktur für eine IndividualQuestion und einem dazugehörigen Eintrag (Entry), mit Hilfe der übergebenen Attribute
+     *
+     * @param questionDifficultyInt zu setzender Wert des neuen Eintrags
+     * @param questionCorrect       zu setzender Wert des neuen Eintrags
+     * @return ein IndividualQuestion Objekt, dass einen Eintrag bestehend aus den übergebenen Attributen enthält {@link IndividualQuestion}
      */
-    public static IndividualQuestion setIndividualQuestionData(int questionDifficultyInt, boolean questionCorrect){
+    public static IndividualQuestion setIndividualQuestionData(int questionDifficultyInt, boolean questionCorrect) {
         IndividualQuestion individualQuestion = new IndividualQuestion();
         individualQuestion.setLastQuestionDifficulty(questionDifficultyInt);
         HashMap<String, Entry> entries = new HashMap<>();
@@ -44,25 +51,56 @@ public class UserDataUtils {
     }
 
     //Geb die schwierigkeit 0-2 (eg. DIFFICULTY_INTEGER_EASY) an und bekomm die passenden Frage IDs aus den userData zurück + Ohne die Frage mit der lastQuestionID
-    public static List<String> getCorrespondingQuestionIDs(UserData userData, int difficulty, String lastQuestionID){
+
+    /**
+     * Gibt eine Liste an Quizfragen-IDs (questionId), exclusive der übergebenen Id lastQuestionID,
+     * zur angegebenen Quizfragen-Schwierigkeit (difficulty), aus dem userData Objekt zurück
+     *
+     * @param userData       aus dem die Quizfragen-IDs genommen werden sollen
+     * @param difficulty     Wert den die Quizfragen-IDs inne haben sollen
+     * @param lastQuestionID Id die nicht in der zurückzugebenen Liste enthalten sein soll
+     * @return Liste an Quizfragen-IDs nach den übergebenen Richtwerten {@link List<String>}
+     */
+    public static List<String> getCorrespondingQuestionIDs(UserData userData, int difficulty, String lastQuestionID) {
         return userData.getQuestions().entrySet().parallelStream().filter(mapEntry -> mapEntry.getValue().getLastQuestionDifficulty() == difficulty)
                 .map(mapEntry -> mapEntry.getKey()).filter(questionId -> !questionId.equals(lastQuestionID)).collect(Collectors.toList());
     }
 
-
     // Einträge von einem bestimmten Zeitpunkt bis todate zurück geben
-    public static List<Entry> getEntriesToDate(UserData userData, long epochTime){
+
+    /**
+     * Gibt eine Liste an Einträgen (Entry), die nach dem übergebenen Zeitpunkt (epochTime) erstellt wurden, aus den userData zurück
+     *
+     * @param userData  aus den die Einträge genommen werden sollen
+     * @param epochTime Zeitpunkt der angibt, wann die Einträge mindestens erstellt wurden müssen
+     * @return Liste an Einträgen nach den übergebenen Richtwerten {@link List<Entry>}
+     */
+    public static List<Entry> getEntriesToDate(UserData userData, long epochTime) {
         return userData.getQuestions().values().parallelStream().flatMap(individualQuestion -> individualQuestion.getEntries().entrySet().stream())
                 .filter(mapEntry -> Long.parseLong(mapEntry.getKey()) >= epochTime).map(mapEntry -> mapEntry.getValue()).collect(Collectors.toList());
     }
 
-    public static String getCorrectAnsweredPercent(List<Entry> entries){
+    /**
+     * Gibt die Anzahl der korrekt beantworteten Quizfragen, aus der übergebenen Entry-Liste, in Prozent zurück
+     *
+     * @param entries Liste, dessen Einträge verarbeitet werden sollen
+     * @return Anzahl der korrekt beantworteten Quizfragen als String in der Form #X,XX {@link String}
+     */
+    public static String getCorrectAnsweredPercent(List<Entry> entries) {
         NumberFormat formatter = new DecimalFormat("#0.00");
-        double correctAnswered = (double) entries.parallelStream().filter(entry -> entry.isCorrectAnswered() == true).count();
+        double correctAnswered = (double) entries.parallelStream().filter(entry -> entry.isCorrectAnswered()).count();
         return formatter.format(correctAnswered / entries.size() * 100).replace(".", ",");
     }
 
-    public static long getAnsweredDifficultyCount(List<Entry> entries, int difficulty){
+    /**
+     * Gibt die Anzahl der zur übergebenen Quizfragen-Schwierigkeit (difficulty) gefundenen Einträge (Entry)
+     * aus der Liste entries zurück
+     *
+     * @param entries    Liste, dessen Einträge verarbeitet werden sollen
+     * @param difficulty Quizfragen-Schwierigkeit dessen Einträge gesucht werden
+     * @return Anzahl der gefundenen Einträge mit der angegebenen difficulty {@link long}
+     */
+    public static long getAnsweredDifficultyCount(List<Entry> entries, int difficulty) {
         return entries.parallelStream().filter(entry -> entry.getQuestionDifficulty() == difficulty).count();
     }
 }

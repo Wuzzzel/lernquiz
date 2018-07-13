@@ -69,10 +69,47 @@
           "samples": []
         },
         {
-          "name": "UniversalMainMenu",
+          "name": "UniversalMainMenuIntent",
           "slots": [],
           "samples": [
             "Hauptmenü"
+          ]
+        },
+        {
+          "name": "StatisticIntent",
+          "slots": [],
+          "samples": [
+            "Starte Statistiken",
+            "Statistiken",
+            "Starte Statistik",
+            "Statistik"
+          ]
+        },
+        {
+          "name": "StatisticPeriodIntent",
+          "slots": [
+            {
+              "name": "date",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "samples": [
+            "{date}"
+          ]
+        },
+        {
+          "name": "AssistModeIntent",
+          "slots": [
+            {
+              "name": "deActivate",
+              "type": "DEACTIVATE"
+            }
+          ],
+          "samples": [
+            "{deActivate} Unterstützung",
+            "Unterstützung {deActivate}",
+            "{deActivate} Unterstützungsmodus",
+            "Unterstützungsmodus {deActivate}"
           ]
         }
       ],
@@ -148,6 +185,31 @@
             {
               "name": {
                 "value": "schwer"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DEACTIVATE",
+          "values": [
+            {
+              "name": {
+                "value": "deaktiviere"
+              }
+            },
+            {
+              "name": {
+                "value": "deaktivieren"
+              }
+            },
+            {
+              "name": {
+                "value": "aktivieren"
+              }
+            },
+            {
+              "name": {
+                "value": "aktiviere"
               }
             }
           ]

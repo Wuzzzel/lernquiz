@@ -1,17 +1,16 @@
 package main.java.lernquiz.dao.xmlModel;
 
 import javax.xml.bind.annotation.*;
-import java.util.List;
 import java.util.Map;
 
 @XmlRootElement(name = "questions")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = { "category", "questionsMap" })
+@XmlType(propOrder = {"category", "questionsMap"})
 public class Questions {
 
     private String category;
 
-    private Map<String, QuizItem> questionsMap;
+    private Map<String, QuizItem> questionsMap; //Der Key repräsentiert die QuizfragenId
 
     public String getCategory() {
         return category;

@@ -5,9 +5,10 @@ public class Entry {
     private int questionDifficulty;
     private boolean correctAnswered;
 
-    public Entry(){}
+    public Entry() {
+    }
 
-    public Entry(int questionDifficulty, boolean correctAnswered){
+    public Entry(int questionDifficulty, boolean correctAnswered) {
         this.questionDifficulty = questionDifficulty;
         this.correctAnswered = correctAnswered;
     }

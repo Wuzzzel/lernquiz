@@ -25,34 +25,40 @@ public class QuizAnswerIntentHandler implements RequestHandler {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     /**
-     * Returns true if the handler can dispatch the current request
+     * Wird vom SDK aufgerufen, um zu bestimmen, ob dieser Handler in der Lage ist die aktuelle Anfrage zu bearbeiten.
+     * Gibt true zurück, wenn der Handler die aktuelle Anfrage bearbeiten kann, ansonsten false
      *
-     * @param input request envelope containing request, context and state
-     * @return true if the handler can dispatch the current request
+     * @param input Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
+     * @return true, wenn der Handler die aktuelle Anfrage bearbeiten kann
      */
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(intentName("QuizAnswerIntent").and(sessionAttribute(Attributes.STATE_KEY, Attributes.QUIZ_STATE))); //TODO: Ggf. hier nur nach STATE_KEY schauen, da die Buchstaben (letter) Antwort sonst nicht funktioniert. Oder Buchstabenantwort einfach ganz raus nehmen!
+        return input.matches(intentName("QuizAnswerIntent").and(sessionAttribute(Attributes.STATE_KEY, Attributes.QUIZ_STATE)));
     }
 
 
     /**
-     * Accepts an input and generates a response
+     * Wird vom SDK aufgerufen, wenn dieser Antwort-Handler genutzt wird.
+     * Akzeptiert ein HandlerInput und generiert eine optionale Antwort. Verarbeitet die Nutzerangaben bezüglich der Quizfragenantwort
+     * und fragt die Nutzer wie schwer sie die Quizfrage fanden
      *
-     * @param input request envelope containing request, context and state
-     * @return an optional {@link Response} from the handler.
+     * @param input Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
+     * @return eine optionale Antwort {@link Response} vom Handler
      */
     @Override
     public Optional<Response> handle(HandlerInput input) {
+        //Daten aus Session holen. Log-Handling einrichten
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
-        String responseText;
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
-
+        int assistMode = (int) sessionAttributes.get(Attributes.ASSIST_MODE);
         QuestionUtils.logHandling(input, this.getClass().getName());
 
-        Map<String, String> quizItemMap = (LinkedHashMap<String, String>) sessionAttributes.get(Attributes.QUIZ_ITEM_KEY); // Da man ein JSON zurück bekommt
-        QuizItem quizItem = MAPPER.convertValue(quizItemMap, QuizItem.class); // Muss dann mit dem Mapper in das ursprüngliche Objekt gewandelt werden
+        //Quizfrage aus der Session lesen
+        Map<String, String> quizItemMap = (LinkedHashMap<String, String>) sessionAttributes.get(Attributes.QUIZ_ITEM_KEY); //Es wird von JSON zu Map gewandelt
+        QuizItem quizItem = MAPPER.convertValue(quizItemMap, QuizItem.class); //Muss dann mit dem Mapper in das ursprüngliche Objekt konvertiert werden
 
+        //Nutzerantwort aus Slot holen und je nach Korrektheit Antworttext wählen
+        String responseText;
         boolean correct = compareSlots(intentRequest.getIntent().getSlots(), quizItem.getAnswers().size(), getCorrectAnswer(quizItem));
         if (correct) {
             responseText = Constants.QUIZ_ANSWER_CORRECT_MESSAGE;
@@ -60,49 +66,63 @@ public class QuizAnswerIntentHandler implements RequestHandler {
             responseText = Constants.QUIZ_ANSWER_WRONG_MESSAGE;
         }
 
-        //Antwort war korrekt oder nicht in die session(json) schreiben, damit sie nach der Abfrage der Schwierigkeit vorhanden sind, um sie dort zusammen in die Datenbank zu schreiben
+        //Antwort-Korrektheit in die Session schreiben, damit sie nach der Abfrage der Schwierigkeit vorhanden sind, um sie dort zusammen in die Datenbank zu schreiben
         sessionAttributes.put(Attributes.QUESTION_CORRECT_KEY, correct);
-
+        //Antwort generieren, Intentdaten in Session speichern und return
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.DIFFICULTY_STATE);
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
+        responseText += " " + Constants.QUIZ_DIFFICULTY_MESSAGE[assistMode];
         sessionAttributes.put(Attributes.RESPONSE_KEY, responseText);
-        return QuestionUtils.generateDifficultyResponse(input);
+        return input.getResponseBuilder()
+                .withSpeech(responseText)
+                .withReprompt(Constants.QUIZ_DIFFICULTY_REPROMT_MESSAGE[assistMode])
+                .withShouldEndSession(false)
+                .build();
     }
 
 
     /**
-     * @param slots
-     * @param amountOfAnswers
-     * @param correctAnswer
-     * @return
+     * Vergleicht den Inhalt der übergebenen Slots auf Nutzerantworten und gibt bei einer korrekten Antwort true, ansonsten false zurück
+     *
+     * @param slots           beinhaltet Slots der Nuterantwort
+     * @param amountOfAnswers gibt an wie viele Antwortmöglichkeiten die Quizfrage besitzt
+     * @param correctAnswer   gibt die korrekte Antwortmöglichkeit an
+     * @return true, wenn Nutzerantwort korrekt, ansonsten false {@link boolean}
+     * @throws AskSdkException, wenn der Inhalt eines Slots "?" gleicht
+     * @throws AnswerOutOfBoundsException, wenn die Antwort des Nutzers größer als amountOfAnswers ist
      */
-    private boolean compareSlots(Map<String, Slot> slots, int amountOfAnswers, int correctAnswer) {
+    private boolean compareSlots(Map<String, Slot> slots, int amountOfAnswers, int correctAnswer) throws AskSdkException, AnswerOutOfBoundsException {
         for (Slot slot : slots.values()) {
             if (slot.getValue() != null) {
                 int answerNumber = -1;
-                if (slot.getValue().equals("?"))
-                    throw new AskSdkException("Antwort des Nutzers konnte nicht erkannt werden."); //Es kommt vor, wenn man mit "Antwort ein" Antwortet, dass im value feld ein Fragezeichen steht
-                if (slot.getName().equals("number")) answerNumber = Integer.valueOf(slot.getValue());
+                if (slot.getValue().equals("?")) //Kann vorkommen, wenn die Nutzer beispielsweise mit "Antwort ein" antworten
+                    throw new AskSdkException("Antwort des Nutzers konnte nicht erkannt werden."); //Dann Exception werfen
+                if (slot.getName().equals("number"))
+                    answerNumber = Integer.valueOf(slot.getValue()); //Antwort in Integer wandeln
                 if (slot.getName().equals("letter")) answerNumber = letterToInt(slot.getValue());
                 if (answerNumber == correctAnswer) return true;
-                if (answerNumber > amountOfAnswers)
-                    throw new AnswerOutOfBoundsException("Antwort des Nutzers ist nicht in der Fragestellung enthalten.", amountOfAnswers); //Es gibt bspw nur 3 Antwortmöglichkeiten, der Nutzer sagt aber 4
+                if (answerNumber > amountOfAnswers) //Es gibt beispielsweise nur 3 Antwortmöglichkeiten, die Nutzer sagen aber "Antwort 4"
+                    throw new AnswerOutOfBoundsException("Antwort des Nutzers ist nicht in der Fragestellung enthalten.", amountOfAnswers);
             }
         }
         return false;
     }
 
     /**
-     * @param letter
-     * @return
+     * Konvertiert den ersten Buchstaben eines Strings in die dazugehörige Integer Zahl (a->1, b->2, usw.)
+     *
+     * @param letter der zu konvertierende Buchstabe
+     * @return Integer-Zahl des Buchstabens {@link int}
      */
     public int letterToInt(String letter) {
         return letter.toLowerCase().charAt(0) - 'a' + 1;
     }
 
     /**
-     * @param quizItem
-     * @return
+     * Findet in dem übergebenen QuizItem die Position der korrekten Antwortmöglichkeit und gibt diese zurück
+     *
+     * @param quizItem in dem nach der korrekten Antwortmöglichkeit gesucht werden soll
+     * @return Position der korrekten Antwortmöglichkeit {@link int}
      */
     public int getCorrectAnswer(QuizItem quizItem) {
         List<Boolean> correctAnswers = quizItem.getCorrectAnswers();

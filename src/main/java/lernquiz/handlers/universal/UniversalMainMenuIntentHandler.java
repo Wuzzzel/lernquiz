@@ -15,10 +15,11 @@ import static com.amazon.ask.request.Predicates.intentName;
 public class UniversalMainMenuIntentHandler implements RequestHandler {
 
     /**
-     * Returns true if the handler can dispatch the current request
+     * Wird vom SDK aufgerufen, um zu bestimmen, ob dieser Handler in der Lage ist die aktuelle Anfrage zu bearbeiten.
+     * Gibt true zurück, wenn der Handler die aktuelle Anfrage bearbeiten kann, ansonsten false
      *
-     * @param input request envelope containing request, context and state
-     * @return true if the handler can dispatch the current request
+     * @param input Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
+     * @return true, wenn der Handler die aktuelle Anfrage bearbeiten kann
      */
     @Override
     public boolean canHandle(HandlerInput input) {
@@ -26,27 +27,32 @@ public class UniversalMainMenuIntentHandler implements RequestHandler {
     }
 
     /**
-     * Accepts an input and generates a response
+     * Wird vom SDK aufgerufen, wenn dieser Antwort-Handler genutzt wird.
+     * Akzeptiert ein HandlerInput und generiert eine optionale Antwort. Beinhaltet die Logik des Allgemeingültigen Befehls "Hauptmenü"
      *
-     * @param input request envelope containing request, context and state
-     * @return an optional {@link Response} from the handler.
+     * @param input Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
+     * @return eine optionale Antwort {@link Response} vom Handler
      */
     @Override
     public Optional<Response> handle(HandlerInput input) {
+        //Daten aus Session holen. Log-Handling einrichten
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         QuestionUtils.logHandling(input, this.getClass().getName());
         int assistMode = (int) sessionAttributes.get(Attributes.ASSIST_MODE);
 
+        //Befehl Logik
         String responseText;
         String state = (String) sessionAttributes.get(Attributes.STATE_KEY);
-        if(state.equals(Attributes.START_STATE)) {
-            responseText = Constants.UNIVERSAL_MAIN_MENU_MESSAGE; // Wenn der Nutzer bereits im Hauptmenü ist, bekommt er die Repsonse er sei schon dort
+        if (state.equals(Attributes.START_STATE)) {
+            responseText = Constants.UNIVERSAL_MAIN_MENU_MESSAGE; //Wenn die Nutzer sich bereits im Hauptmenü befinden, bekommen sie die Antwort sie seien schon dort
         } else {
-            responseText = Constants.MAIN_MENU_MESSAGE[assistMode];   //TODO: Das ist hier so ziemlich das gleiche wie in der QuizAnotherQuestionIntentHandler geschichte
+            responseText = Constants.MAIN_MENU_MESSAGE[assistMode]; //Ansonsten Ausgabe der Hauptmenü-Antwort
         }
+
+        //Daten dieses Intents in die Session schreiben. Antwort-String finalisieren und return
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.START_STATE);
-        sessionAttributes.put(Attributes.RESPONSE_KEY, Constants.MAIN_MENU_MESSAGE[assistMode]); //Beim Universal Wiederhole, soll aber die normale Hauptmenü Response folgen
+        sessionAttributes.put(Attributes.RESPONSE_KEY, Constants.MAIN_MENU_MESSAGE[assistMode]); //Beim Universal Wiederhole, soll die normale Hauptmenü-Antwort folgen
         return input.getResponseBuilder()
                 .withSpeech(responseText)
                 .withReprompt(Constants.MAIN_MENU_REPROMT_MESSAGE[assistMode])

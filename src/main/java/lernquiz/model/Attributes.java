@@ -2,6 +2,10 @@ package main.java.lernquiz.model;
 
 public class Attributes {
 
+    /**
+     * Zustände
+     * Werden neben den Intents, zur bestimmung des nächsten RequestHandlers genutzt
+     */
     public static final String START_STATE = "_start";
     public static final String QUIZ_STATE = "_quiz";
     public static final String DIFFICULTY_STATE = "_difficulty";
@@ -9,6 +13,11 @@ public class Attributes {
     public static final String STATISTIC_STATE = "_statistic";
     public static final String[] STATES = {START_STATE, QUIZ_STATE, DIFFICULTY_STATE, ANOTHER_QUESTION_STATE, STATISTIC_STATE};
 
+
+    /**
+     * Schlüssel
+     * Werden als Key genutzt, um Daten in der Session-Map abzuspeichern
+     */
     public static final String STATE_KEY = "state";
     public static final String FIRST_QUESTION_KEY = "first";
     public static final String RESPONSE_KEY = "response";
