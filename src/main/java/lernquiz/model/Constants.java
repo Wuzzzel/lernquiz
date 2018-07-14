@@ -69,7 +69,7 @@ public class Constants {
 
     //Quizantwort
     public static String QUIZ_ANSWER_CORRECT_MESSAGE = "Deine Antwort war richtig.";
-    public static String QUIZ_ANSWER_WRONG_MESSAGE = "Deine Antwort war falsch.";
+    public static String QUIZ_ANSWER_WRONG_MESSAGE = "Deine Antwort war falsch. Die korrekte Antwort lautet:";
 
     //Frageschwierigkeit
     public static String[] QUIZ_DIFFICULTY_MESSAGE = {"Wie schwer fandest du diese Frage? Schwer, Mittelschwer oder einfach.",

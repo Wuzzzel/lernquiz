@@ -36,7 +36,6 @@ public class QuizAnswerIntentHandler implements RequestHandler {
         return input.matches(intentName("QuizAnswerIntent").and(sessionAttribute(Attributes.STATE_KEY, Attributes.QUIZ_STATE)));
     }
 
-
     /**
      * Wird vom SDK aufgerufen, wenn dieser Antwort-Handler genutzt wird.
      * Akzeptiert ein HandlerInput und generiert eine optionale Antwort. Verarbeitet die Nutzerangaben bezüglich der Quizfragenantwort
@@ -59,11 +58,13 @@ public class QuizAnswerIntentHandler implements RequestHandler {
 
         //Nutzerantwort aus Slot holen und je nach Korrektheit Antworttext wählen
         String responseText;
-        boolean correct = compareSlots(intentRequest.getIntent().getSlots(), quizItem.getAnswers().size(), getCorrectAnswer(quizItem));
+        int correctAnswerPosition = getCorrectAnswer(quizItem);
+        boolean correct = compareSlots(intentRequest.getIntent().getSlots(), quizItem.getAnswers().size(), correctAnswerPosition);
         if (correct) {
             responseText = Constants.QUIZ_ANSWER_CORRECT_MESSAGE;
         } else {
-            responseText = Constants.QUIZ_ANSWER_WRONG_MESSAGE;
+            String correctAnswer = quizItem.getAnswers().get(correctAnswerPosition);
+            responseText = Constants.QUIZ_ANSWER_WRONG_MESSAGE + " " + correctAnswer + "." + Constants.SSML_BREAK_PARAGRAPH;
         }
 
         //Antwort-Korrektheit in die Session schreiben, damit sie nach der Abfrage der Schwierigkeit vorhanden sind, um sie dort zusammen in die Datenbank zu schreiben
@@ -80,7 +81,6 @@ public class QuizAnswerIntentHandler implements RequestHandler {
                 .build();
     }
 
-
     /**
      * Vergleicht den Inhalt der übergebenen Slots auf Nutzerantworten und gibt bei einer korrekten Antwort true, ansonsten false zurück
      *
@@ -88,7 +88,7 @@ public class QuizAnswerIntentHandler implements RequestHandler {
      * @param amountOfAnswers gibt an wie viele Antwortmöglichkeiten die Quizfrage besitzt
      * @param correctAnswer   gibt die korrekte Antwortmöglichkeit an
      * @return true, wenn Nutzerantwort korrekt, ansonsten false {@link boolean}
-     * @throws AskSdkException, wenn der Inhalt eines Slots "?" gleicht
+     * @throws AskSdkException,            wenn der Inhalt eines Slots "?" gleicht
      * @throws AnswerOutOfBoundsException, wenn die Antwort des Nutzers größer als amountOfAnswers ist
      */
     private boolean compareSlots(Map<String, Slot> slots, int amountOfAnswers, int correctAnswer) throws AskSdkException, AnswerOutOfBoundsException {
