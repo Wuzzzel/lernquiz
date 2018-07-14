@@ -187,14 +187,14 @@
                 <id>il_3876_qst_100011</id>
                 <question>Was beschreibt das Fragmentierungsschema?</question>
                 <answers>
-                    <answer>Zuordnung von Fragmenten zu DB-Knoten</answer>
+                    <answer>Zuordnung von Fragmenten zu Datenbank Knoten</answer>
                     <answer>Aufteilung von Relationen in Fragmente</answer>
                     <answer>Vereinheitlichung heterogener Datendarstellungen</answer>
                 </answers>
                 <correctAnswers>
                     <answer>false</answer>
-                    <answer>true/answer>
-                        <answer>false</answer>
+                    <answer>true</answer>
+                    <answer>false</answer>
                     </correctAnswers>
                 </value>
             </entry>
@@ -233,10 +233,10 @@
             <entry>
                 <key>il_3876_qst_100014</key>
                 <value>
-                    <id>il_3876_qst_100013</id>
+                    <id>il_3876_qst_100014</id>
                     <question>Was wird als Allokation bezeichnet?</question>
                     <answers>
-                        <answer>Allokation bezeichnet die Zuordnung von Fragmenten zu konkreten DB-Knoten</answer>
+                        <answer>Allokation bezeichnet die Zuordnung von Fragmenten zu konkreten Datenbank Knoten</answer>
                         <answer>Allokation beschreibt die Folgen der Dateninkonsistenz</answer>
                         <answer>Mit Allokation wird die Optimierung der SQL-Statements und deren Ausführung hinsichtlich der benötigten Ausführungszeit bezeichnet</answer>
                     </answers>
