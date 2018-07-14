@@ -194,59 +194,58 @@
                 <correctAnswers>
                     <answer>false</answer>
                     <answer>true/answer>
-                    <answer>false</answer>
-                </correctAnswers>
-            </value>
-        </entry>
-        <entry>
-            <key>il_3876_qst_100012</key>
-            <value>
-                <id>il_3876_qst_100012</id>
-                <question>Was versteht man unter Fragmentierung?</question>
-                <answers>
-                    <answer>Unter Fragmentierung versteht man die Aufteilung von Attributen (Tabellenspalten) in mehrere Relationen (Tabellen)</answer>
-                    <answer>Unter Fragmentierung versteht man die mehrfach vorhandenen Daten zu minimieren</answer>
-                    <answer>Unter Fragmentierung versteht man die Aufteilung von Datenbankobjekten in mehrere Teile, die verteilt gespeichert werden können</answer>
-                </answers>
-                <correctAnswers>
-                    <answer>false</answer>
-                    <answer>false</answer>
-                    <answer>true</answer>
-                </correctAnswers>
-            </value>
-        </entry>
-                <entry>
-            <key>il_3876_qst_100013</key>
-            <value>
-                <id>il_3876_qst_100013</id>
-                <question>Welcher Treiber realisiert die Anbindung an die Datenbank bei der Verwendung von SQLJ?</question>
-                <answers>
-                    <answer>ODBC</answer>
-                    <answer>JDBC</answer>
-                </answers>
-                <correctAnswers>
-                    <answer>false</answer>
-                    <answer>true</answer>
-                </correctAnswers>
-            </value>
-        </entry>
-                </entry>
-                <entry>
-            <key>il_3876_qst_100014</key>
-            <value>
-                <id>il_3876_qst_100013</id>
-                <question>Was wird als Allokation bezeichnet?</question>
-                <answers>
-                    <answer>Allokation bezeichnet die Zuordnung von Fragmenten zu konkreten DB-Knoten</answer>
-                    <answer>Allokation beschreibt die Folgen der Dateninkonsistenz</answer>
-                    <answer>Mit Allokation wird die Optimierung der SQL-Statements und deren Ausführung hinsichtlich der benötigten Ausführungszeit bezeichnet</answer>
-                </answers>
-                <correctAnswers>
-                    <answer>true</answer>
-                    <answer>false</answer>
-                    <answer>false</answer>
-                </correctAnswers>
-            </value>
-        </entry>
-    </questionsMap>
-</questions>
+                        <answer>false</answer>
+                    </correctAnswers>
+                </value>
+            </entry>
+            <entry>
+                <key>il_3876_qst_100012</key>
+                <value>
+                    <id>il_3876_qst_100012</id>
+                    <question>Was versteht man unter Fragmentierung?</question>
+                    <answers>
+                        <answer>Unter Fragmentierung versteht man die Aufteilung von Attributen (Tabellenspalten) in mehrere Relationen (Tabellen)</answer>
+                        <answer>Unter Fragmentierung versteht man die mehrfach vorhandenen Daten zu minimieren</answer>
+                        <answer>Unter Fragmentierung versteht man die Aufteilung von Datenbankobjekten in mehrere Teile, die verteilt gespeichert werden können</answer>
+                    </answers>
+                    <correctAnswers>
+                        <answer>false</answer>
+                        <answer>false</answer>
+                        <answer>true</answer>
+                    </correctAnswers>
+                </value>
+            </entry>
+            <entry>
+                <key>il_3876_qst_100013</key>
+                <value>
+                    <id>il_3876_qst_100013</id>
+                    <question>Welcher Treiber realisiert die Anbindung an die Datenbank bei der Verwendung von SQLJ?</question>
+                    <answers>
+                        <answer>ODBC</answer>
+                        <answer>JDBC</answer>
+                    </answers>
+                    <correctAnswers>
+                        <answer>false</answer>
+                        <answer>true</answer>
+                    </correctAnswers>
+                </value>
+            </entry>
+            <entry>
+                <key>il_3876_qst_100014</key>
+                <value>
+                    <id>il_3876_qst_100013</id>
+                    <question>Was wird als Allokation bezeichnet?</question>
+                    <answers>
+                        <answer>Allokation bezeichnet die Zuordnung von Fragmenten zu konkreten DB-Knoten</answer>
+                        <answer>Allokation beschreibt die Folgen der Dateninkonsistenz</answer>
+                        <answer>Mit Allokation wird die Optimierung der SQL-Statements und deren Ausführung hinsichtlich der benötigten Ausführungszeit bezeichnet</answer>
+                    </answers>
+                    <correctAnswers>
+                        <answer>true</answer>
+                        <answer>false</answer>
+                        <answer>false</answer>
+                    </correctAnswers>
+                </value>
+            </entry>
+        </questionsMap>
+    </questions>
