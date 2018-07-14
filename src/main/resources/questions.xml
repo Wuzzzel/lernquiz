@@ -57,14 +57,14 @@
                 <id>il_3876_qst_100003</id>
                 <question>Was bedeutet die Abkürzung "OID"?</question>
                 <answers>
-                    <answer>Object identifier</answer>
                     <answer>Object in Database</answer>
+                    <answer>Object identifier</answer>
                     <answer>Online identified Database</answer>
                     <answer>Object introduction</answer>
                 </answers>
                 <correctAnswers>
-                    <answer>true</answer>
                     <answer>false</answer>
+                    <answer>true</answer>
                     <answer>false</answer>
                     <answer>false</answer>
                 </correctAnswers>
@@ -76,14 +76,14 @@
                 <id>il_3876_qst_100004</id>
                 <question>Bei der Anfragenoptimierung soll der relationale Ausdruck des SQL-Statements so aufbereitet sein, dass z.b. der Rechen- und Speicherbedarf der einzelnen Operatoren möglichst</question>
                 <answers>
-                    <answer>klein ist</answer>
                     <answer>groß ist</answer>
                     <answer>gleich groß ist</answer>
+                    <answer>klein ist</answer>
                 </answers>
                 <correctAnswers>
+                    <answer>false</answer>
+                    <answer>false</answer>
                     <answer>true</answer>
-                    <answer>false</answer>
-                    <answer>false</answer>
                 </correctAnswers>
             </value>
         </entry>
@@ -98,6 +98,152 @@
                 </answers>
                 <correctAnswers>
                     <answer>true</answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100006</key>
+            <value>
+                <id>il_3876_qst_100006</id>
+                <question>Was ist das Ziel des Relationalen Modells?</question>
+                <answers>
+                    <answer>Die reale Welt durch eine hierarchische Baumstruktur abzubilden</answer>
+                    <answer>Hoher Grad an Datenunabhängigkeit, Normalisierung zur Vermeidung von Redundanzen und Konsistenzproblemen</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>false</answer>
+                    <answer>true</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100007</key>
+            <value>
+                <id>il_3876_qst_100007</id>
+                <question>Mit welcher Methode können in SQLJ durch mengenwertige Anfrageergebnisse gelaufen werden?</question>
+                <answers>
+                    <answer>Schleife</answer>
+                    <answer>Iterator</answer>
+                    <answer>ResultSet.next()</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>false</answer>
+                    <answer>true</answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100008</key>
+            <value>
+                <id>il_3876_qst_100008</id>
+                <question>Was versteht man unter der Synchronisation?</question>
+                <answers>
+                    <answer>Synchronisation ist der Abgleich von redundant vorhandenen Daten, die verschiedene Änderungen erfahren haben</answer>
+                    <answer>Synchronisation ist die Möglichkeit, redundant vorhandene Daten zu unterscheiden</answer>
+                    <answer>Synchronisation ermöglicht dem Anwender Daten zu vermehren und zu ändern</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>true</answer>
+                    <answer>false</answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100009</key>
+            <value>
+                <id>il_3876_qst_100009</id>
+                <question>Ist bei XML-Dokumenten die Groß- und Kleinschreibung der Bezeichner relevant?</question>
+                <answers>
+                    <answer>Ja</answer>
+                    <answer>Nein</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>true</answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100010</key>
+            <value>
+                <id>il_3876_qst_100010</id>
+                <question>Transaktionen sind serialisierbar, wenn zwei Schedules equivalent zueinander sind.</question>
+                <answers>
+                    <answer>Richtig</answer>
+                    <answer>Falsch</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>true</answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100011</key>
+            <value>
+                <id>il_3876_qst_100011</id>
+                <question>Was beschreibt das Fragmentierungsschema?</question>
+                <answers>
+                    <answer>Zuordnung von Fragmenten zu DB-Knoten</answer>
+                    <answer>Aufteilung von Relationen in Fragmente</answer>
+                    <answer>Vereinheitlichung heterogener Datendarstellungen</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>false</answer>
+                    <answer>true/answer>
+                    <answer>false</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+        <entry>
+            <key>il_3876_qst_100012</key>
+            <value>
+                <id>il_3876_qst_100012</id>
+                <question>Was versteht man unter Fragmentierung?</question>
+                <answers>
+                    <answer>Unter Fragmentierung versteht man die Aufteilung von Attributen (Tabellenspalten) in mehrere Relationen (Tabellen)</answer>
+                    <answer>Unter Fragmentierung versteht man die mehrfach vorhandenen Daten zu minimieren</answer>
+                    <answer>Unter Fragmentierung versteht man die Aufteilung von Datenbankobjekten in mehrere Teile, die verteilt gespeichert werden können</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>false</answer>
+                    <answer>false</answer>
+                    <answer>true</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+                <entry>
+            <key>il_3876_qst_100013</key>
+            <value>
+                <id>il_3876_qst_100013</id>
+                <question>Welcher Treiber realisiert die Anbindung an die Datenbank bei der Verwendung von SQLJ?</question>
+                <answers>
+                    <answer>ODBC</answer>
+                    <answer>JDBC</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>false</answer>
+                    <answer>true</answer>
+                </correctAnswers>
+            </value>
+        </entry>
+                </entry>
+                <entry>
+            <key>il_3876_qst_100014</key>
+            <value>
+                <id>il_3876_qst_100013</id>
+                <question>Was wird als Allokation bezeichnet?</question>
+                <answers>
+                    <answer>Allokation bezeichnet die Zuordnung von Fragmenten zu konkreten DB-Knoten</answer>
+                    <answer>Allokation beschreibt die Folgen der Dateninkonsistenz</answer>
+                    <answer>Mit Allokation wird die Optimierung der SQL-Statements und deren Ausführung hinsichtlich der benötigten Ausführungszeit bezeichnet</answer>
+                </answers>
+                <correctAnswers>
+                    <answer>true</answer>
+                    <answer>false</answer>
                     <answer>false</answer>
                 </correctAnswers>
             </value>
