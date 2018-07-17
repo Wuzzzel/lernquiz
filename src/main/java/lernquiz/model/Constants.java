@@ -64,8 +64,8 @@ public class Constants {
     //Fragestellung
     public static String QUIZ_QUESTION_MESSAGE = "Die Frage lautet: ";
     public static String QUIZ_ANSWER_OPTIONS_MESSAGE = "Deine Antwortmöglichkeiten sind: ";
-    public static String[] QUIZ_QUESTION_REPROMT_MESSAGE = {"Entschuldigung, ich habe dich nicht gehört. Gib deine Antwort beispielsweise mit Antwort 1 an. Für weitere Informationen sag Hilfe.",
-            "Entschuldigung, ich habe dich nicht gehört. Gib deine Antwort beispielsweise mit Antwort 1 an."};
+    public static String[] QUIZ_QUESTION_REPROMT_MESSAGE = {"Entschuldigung, ich habe dich nicht gehört. Gib deine Antwort beispielsweise mit Antwort A an. Für weitere Informationen sag Hilfe.",
+            "Entschuldigung, ich habe dich nicht gehört. Gib deine Antwort beispielsweise mit Antwort A an."};
 
     //Quizantwort
     public static String QUIZ_ANSWER_CORRECT_MESSAGE = "Deine Antwort war richtig.";
@@ -119,14 +119,14 @@ public class Constants {
     }};
     public static LinkedHashMap<String, String> GRAMMAR_NEWBIE_FIRST_EXPERT_SECOND_ERROR_MESSAGE = new LinkedHashMap<String, String>() {{
         put(Attributes.START_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Du kannst ein Quiz starten, oder dir Statistiken ausgeben lassen.");
-        put(Attributes.QUIZ_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Gib deine Antwort beispielsweise mit Antwort 1 an.");
+        put(Attributes.QUIZ_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Gib deine Antwort beispielsweise mit Antwort A an.");
         put(Attributes.DIFFICULTY_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Sag Schwer, Mittelschwer oder einfach.");
         put(Attributes.ANOTHER_QUESTION_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Sag ja oder nein.");
         put(Attributes.STATISTIC_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Gib einen Zeitraum wie heute an oder lass dir alle Daten Ausgeben.");
     }};
     public static LinkedHashMap<String, String> GRAMMAR_NEWBIE_SECOND_AND_THIRD_EXPERT_THIRD_ERROR_MESSAGE = new LinkedHashMap<String, String>() {{
         put(Attributes.START_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Du kannst ein Quiz starten, oder dir Statistiken ausgeben lassen. Für weitere Informationen sag Hilfe.");
-        put(Attributes.QUIZ_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Gib deine Antwort beispielsweise mit Antwort 1 an. Für weitere Informationen sag Hilfe.");
+        put(Attributes.QUIZ_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Gib deine Antwort beispielsweise mit Antwort A an. Für weitere Informationen sag Hilfe.");
         put(Attributes.DIFFICULTY_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Sag Schwer, Mittelschwer oder einfach. Für weitere Informationen sag Hilfe.");
         put(Attributes.ANOTHER_QUESTION_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Sag ja oder nein. Für weitere Informationen sag Hilfe.");
         put(Attributes.STATISTIC_STATE, GRAMMAR_INTRODUCTION_MESSAGE + " Gib einen Zeitraum wie heute an oder lass dir alle Daten Ausgeben. Für weitere Informationen sag Hilfe.");
@@ -162,7 +162,7 @@ public class Constants {
     public static String UNIVERSAL_QUIT_MESSAGE = "Vielen Dank für die Nutzung und auf Wiedersehen.";
     public static String UNIVERSAL_QUIT_AND_SAFE_MESSAGE = "Dein aktueller Stand der Fragen wurde gespeichert. Vielen Dank für die Nutzung und auf Wiedersehen.";
     public static String UNIVERSAL_HELP_MAIN_MENU_MESSAGE = "Okay, hier ein wenig Hilfe. Du befindest dich im Hauptmenü. Von hier aus kannst du entweder ´Quiz starten´, oder ´Statistik starten´ sagen. Zu jederzeit kannst du außerdem ´Wiederholen´ oder ´Beenden´ sagen.";
-    public static String UNIVERSAL_HELP_QUESTION_MESSAGE = "Okay, hier ein wenig Hilfe. Du befindest dich im Quiz und beantwortest die gestellte Frage. Beantworte sie beispielsweise mit Antwort 1. Zu jederzeit kannst du außerdem ´Wiederholen´, ´Hauptmenü´ oder ´Beenden´ sagen.";
+    public static String UNIVERSAL_HELP_QUESTION_MESSAGE = "Okay, hier ein wenig Hilfe. Du befindest dich im Quiz und beantwortest die gestellte Frage. Beantworte sie beispielsweise mit Antwort A. Zu jederzeit kannst du außerdem ´Wiederholen´, ´Hauptmenü´ oder ´Beenden´ sagen.";
     public static String UNIVERSAL_HELP_DIFFICULTY_MESSAGE = "Okay, hier ein wenig Hilfe. Du befindest dich im Quiz und beurteilst die Schwere der Frage. Beurteile sie mit Schwer, Mittelschwer oder einfach. Zu jederzeit kannst du außerdem ´Wiederholen´, ´Hauptmenü´ oder ´Beenden´ sagen.";
     public static String UNIVERSAL_HELP_ANOTHER_QUESTION_MESSAGE = "Okay, hier ein wenig Hilfe. Du befindest dich im Quiz und stehst davor eine neue Frage gestellt zu bekommen. Wenn du das möchtest antworte mit ja, ansonsten mit nein. Zu jederzeit kannst du außerdem ´Wiederholen´, ´Hauptmenü´ oder ´Beenden´ sagen.";
     public static String UNIVERSAL_HELP_STATISTIC_MESSAGE = "Okay, hier ein wenig Hilfe. Du befindest dich in den Statistiken. Hier kannst du einen Zeitraum, wie beispielweise „3 Tage“ oder Heute angeben und es werden dir die Statistiken dazu ausgegeben. Zu jederzeit kannst du außerdem ´Wiederholen´, ´Hauptmenü´ oder ´Verlassen´ sagen.";

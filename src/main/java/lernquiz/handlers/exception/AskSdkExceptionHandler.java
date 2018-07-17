@@ -48,7 +48,8 @@ public class AskSdkExceptionHandler implements ExceptionHandler {
 
         //Wenn Grammatikfehlerausgaben noch nicht über definierten Wert, generiere eine Antwort und return
         if (grammarExceptionsCount < Constants.GRAMMAR_ERROR.get(assistMode).size()) {
-            return QuestionUtils.generateUniversalOrExceptionResponse(input, Constants.GRAMMAR_ERROR.get(assistMode).get(grammarExceptionsCount), false);
+            return QuestionUtils.generateUniversalOrExceptionResponse(input, Constants.GRAMMAR_ERROR.get(assistMode)
+                    .get(grammarExceptionsCount), false);
         } else {
             //Wenn die Anzahl der Grammatikfehlerausgaben über den definierten Wert liegt, return und beende Skill
             return input.getResponseBuilder()

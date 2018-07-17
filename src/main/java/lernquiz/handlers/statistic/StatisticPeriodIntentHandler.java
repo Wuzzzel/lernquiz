@@ -109,10 +109,11 @@ public class StatisticPeriodIntentHandler implements RequestHandler {
          * value: 2018 <- Bei Nutereingabe: Dieses Jahr
          */
         Date result;
-        String stringDateFormat = determineDateFormat(date).orElseThrow(() -> new AskSdkException("Date parsing Error."));
+        String stringDateFormat = determineDateFormat(date)
+                .orElseThrow(() -> new AskSdkException("Date parsing Error."));
         if (stringDateFormat.equals("WEEK_OF_YEAR")) { // Wenn es das Kalenderwochen Format ist
             Calendar cal = Calendar.getInstance();
-            cal.set(Calendar.YEAR, Integer.valueOf(date.substring(0, 4)));  //Parse die Daten einzelnd
+            cal.set(Calendar.YEAR, Integer.valueOf(date.substring(0, 4)));  //Parse die Daten einzeln
             cal.set(Calendar.WEEK_OF_YEAR, Integer.valueOf(date.substring(6, date.length())));
             cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
             result = cal.getTime();
@@ -142,7 +143,6 @@ public class StatisticPeriodIntentHandler implements RequestHandler {
             put("^\\d{4}-w\\d{1,2}$", "WEEK_OF_YEAR");
             put("^\\d{4}$", "yyyy");
         }};
-
         //String gegen die Mapkeys checken
         for (String regexp : dateFormatRegex.keySet()) {
             if (dateString.toLowerCase().matches(regexp)) {

@@ -11,7 +11,6 @@ public class Attributes {
     public static final String DIFFICULTY_STATE = "_difficulty";
     public static final String ANOTHER_QUESTION_STATE = "_anotherQuestion";
     public static final String STATISTIC_STATE = "_statistic";
-    public static final String[] STATES = {START_STATE, QUIZ_STATE, DIFFICULTY_STATE, ANOTHER_QUESTION_STATE, STATISTIC_STATE};
 
 
     /**

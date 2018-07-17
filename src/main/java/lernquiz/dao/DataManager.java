@@ -55,7 +55,7 @@ public class DataManager {
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             questions = (Questions) jaxbUnmarshaller.unmarshal(is); //Konvertierung in Questions Objekt
         } catch (JAXBException e) {
-            throw new PersistenceException("XML Parser fehler.");
+            throw new PersistenceException("XML Parser Fehler.");
         }
         return questions;
     }

@@ -43,7 +43,9 @@ public class LaunchRequestHandler implements RequestHandler {
         QuestionUtils.logHandling(input, this.getClass().getName());
         UserData userData = DataManager.loadUserData(input);
         int assistMode = userData.getAssistMode();
-        sessionAttributes.put(Attributes.ASSIST_MODE, assistMode); //Unterstützungsmodus in Session schreiben, damit nicht in jedem Handler auf die Datenbank zugegriffen werden muss
+        //Unterstützungsmodus in Session schreiben, damit nicht in jedem Handler auf die
+        // Datenbank zugegriffen werden muss
+        sessionAttributes.put(Attributes.ASSIST_MODE, assistMode);
 
         //Antwort-String mit Willkommensnachricht vorbereiten
         String responseText = Constants.WELCOME_MESSAGE + " ";
@@ -53,11 +55,14 @@ public class LaunchRequestHandler implements RequestHandler {
         //Daten dieses Intents in die Session schreiben
         sessionAttributes.put(Attributes.STATE_KEY, Attributes.START_STATE);
         sessionAttributes.put(Attributes.GRAMMAR_EXCEPTIONS_COUNT_KEY, 0);
-        sessionAttributes.put(Attributes.LAST_QUIZ_ITEM_KEY, ""); //Wird hier schonmal gesetzt, damit später beim ersten get() auf das Attribut keine null-Abfrage gemacht werden muss
+        //LAST_QUIZ_ITEM_KEY wird hier schonmal gesetzt, damit später beim ersten get(),
+        // auf das Attribut, keine null-Abfrage gemacht werden muss
+        sessionAttributes.put(Attributes.LAST_QUIZ_ITEM_KEY, "");
 
         //Antwort-String finalisieren, in Session schreiben und return
         responseText += Constants.MAIN_MENU_INITIAL_MESSAGE[assistMode];
-        sessionAttributes.put(Attributes.RESPONSE_KEY, responseText); //Wird hier gespeichert, damit es für das Universal-Wiederholen bereit gestellt ist
+        //RESPONSE_KEY wird hier gespeichert, damit es für das Universal-Wiederholen bereit gestellt ist
+        sessionAttributes.put(Attributes.RESPONSE_KEY, responseText);
         return input.getResponseBuilder()
                 .withSpeech(responseText)
                 .withReprompt(Constants.MAIN_MENU_REPROMT_MESSAGE[assistMode])

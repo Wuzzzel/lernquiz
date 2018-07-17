@@ -75,25 +75,35 @@ public class QuestionUtils {
      */
     public static QuizItem getNextQuestion(UserData userData, Questions questions, String lastQuestionID) {
         Random random = new Random();
-        List<String> hardQuestions = UserDataUtils.getCorrespondingQuestionIDs(userData, Constants.DIFFICULTY_INTEGER_HARD, lastQuestionID);
-        if (!hardQuestions.isEmpty()) { //Prüfe zunächst ob es Fragen gibt, die vom Nutzer zuletzt mit Schwer markiert wurden
+        //Prüfe zunächst ob es Fragen gibt, die vom Nutzer zuletzt mit Schwer markiert wurden
+        List<String> hardQuestions = UserDataUtils.
+                getCorrespondingQuestionIDs(userData, Constants.DIFFICULTY_INTEGER_HARD, lastQuestionID);
+        if (!hardQuestions.isEmpty()) {
             return getRandomQuizItem(questions, hardQuestions);
         }
         Set<String> answeredQuestions = userData.getQuestions().keySet();
-        List<String> unansweredQuestions = questions.getQuestionsMap().keySet().parallelStream().filter(questionId -> !answeredQuestions.contains(questionId)).collect(Collectors.toList()); //Filter nur Fragen heraus, die noch nicht beantwortet wurden
-        if (!unansweredQuestions.isEmpty()) { //Ansonsten prüfe ob es Fragen gibt, die vom Nutzer noch nicht beantwortet wurden
-            return getRandomQuizItem(questions, unansweredQuestions); //nimm eine Frage die noch nicht dran kamm
+        //Filter nur Fragen heraus, die noch nicht beantwortet wurden
+        List<String> unansweredQuestions = questions.getQuestionsMap().keySet().parallelStream()
+                .filter(questionId -> !answeredQuestions.contains(questionId)).collect(Collectors.toList());
+        //Ansonsten prüfe ob es Fragen gibt, die vom Nutzer noch nicht beantwortet wurden
+        if (!unansweredQuestions.isEmpty()) {
+            return getRandomQuizItem(questions, unansweredQuestions);
         }
-        List<String> mediumQuestions = UserDataUtils.getCorrespondingQuestionIDs(userData, Constants.DIFFICULTY_INTEGER_MEDIUM, lastQuestionID);
-        if (!mediumQuestions.isEmpty()) { //Ansonsten prüfe ob es Fragen gibt, die vom Nutzer zuletzt mit Mittel markiert wurden
+        //Ansonsten prüfe ob es Fragen gibt, die vom Nutzer zuletzt mit Mittel markiert wurden
+        List<String> mediumQuestions = UserDataUtils
+                .getCorrespondingQuestionIDs(userData, Constants.DIFFICULTY_INTEGER_MEDIUM, lastQuestionID);
+        if (!mediumQuestions.isEmpty()) {
             return getRandomQuizItem(questions, mediumQuestions);
         }
-        List<String> easyQuestions = UserDataUtils.getCorrespondingQuestionIDs(userData, Constants.DIFFICULTY_INTEGER_EASY, lastQuestionID);
-        if (!easyQuestions.isEmpty()) { //Ansonsten prüfe ob es Fragen gibt, die vom Nutzer zuletzt mit Leicht markiert wurden
+        //Ansonsten prüfe ob es Fragen gibt, die vom Nutzer zuletzt mit Leicht markiert wurden
+        List<String> easyQuestions = UserDataUtils
+                .getCorrespondingQuestionIDs(userData, Constants.DIFFICULTY_INTEGER_EASY, lastQuestionID);
+        if (!easyQuestions.isEmpty()) {
             return getRandomQuizItem(questions, easyQuestions);
         }
-        List<QuizItem> quizItems = new ArrayList<>(questions.getQuestionsMap().values()); //Wenn alle Listen leer sind, nimm eine Random Frage -> Quasi nur zu beginn des lernens
-        return quizItems.get(random.nextInt(quizItems.size())); //Nimm eine zufällige Frage
+        //Wenn alle Listen leer sind, nimm eine zufällige Frage -> Quasi nur zu beginn des lernens
+        List<QuizItem> quizItems = new ArrayList<>(questions.getQuestionsMap().values());
+        return quizItems.get(random.nextInt(quizItems.size()));
     }
 
     /**
@@ -159,19 +169,18 @@ public class QuestionUtils {
     /**
      * Holt den Zustand aus dem, übergebenen HandlerInput und wählt damit aus der übergebenen LinkedHashMap (responseText)
      * ein Antworttext aus. Aus dieser und dem Parameter shouldEndSession, wird anschließend eine optionale
-     * Antwort erstellt und zurück gegeben
+     * Antwort erstellt und zurückgegeben
      *
      * @param input            Wrapper, der die aktuelle Anfrage, den Kontext und den Zustand beinhaltet
      * @param responseText     LinkedHashMap die die Antworttexte assoziert mit Zuständen enthält
      * @param shouldEndSession gibt an ob die Session mit dieser Antwort beendet werden soll
      * @return die generierte optionale Antwort {@link Optional<Response>}
      */
-    public static Optional<Response> generateUniversalOrExceptionResponse(HandlerInput input, LinkedHashMap<String, String> responseText, boolean shouldEndSession) {
+    public static Optional<Response> generateUniversalOrExceptionResponse
+    (HandlerInput input, LinkedHashMap<String, String> responseText, boolean shouldEndSession) {
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         String currentState = (String) sessionAttributes.get(Attributes.STATE_KEY);
-        return Arrays.stream(Attributes.STATES).filter(state -> state.equals(currentState)).findFirst()
-                .map(state -> buildResponse(input, responseText.get(state), shouldEndSession))
-                .orElse(buildResponse(input, Constants.GRAMMAR_ERROR_MESSAGE, shouldEndSession));
+        return buildResponse(input, responseText.get(currentState), shouldEndSession);
     }
 
     /**

@@ -50,10 +50,8 @@ public class UserDataUtils {
         return individualQuestion;
     }
 
-    //Geb die schwierigkeit 0-2 (eg. DIFFICULTY_INTEGER_EASY) an und bekomm die passenden Frage IDs aus den userData zurück + Ohne die Frage mit der lastQuestionID
-
     /**
-     * Gibt eine Liste an Quizfragen-IDs (questionId), exclusive der übergebenen Id lastQuestionID,
+     * Gibt eine Liste an Quizfragen-IDs (questionId), exklusive der übergebenen Id lastQuestionID,
      * zur angegebenen Quizfragen-Schwierigkeit (difficulty), aus dem userData Objekt zurück
      *
      * @param userData       aus dem die Quizfragen-IDs genommen werden sollen
@@ -62,11 +60,10 @@ public class UserDataUtils {
      * @return Liste an Quizfragen-IDs nach den übergebenen Richtwerten {@link List<String>}
      */
     public static List<String> getCorrespondingQuestionIDs(UserData userData, int difficulty, String lastQuestionID) {
-        return userData.getQuestions().entrySet().parallelStream().filter(mapEntry -> mapEntry.getValue().getLastQuestionDifficulty() == difficulty)
-                .map(mapEntry -> mapEntry.getKey()).filter(questionId -> !questionId.equals(lastQuestionID)).collect(Collectors.toList());
+        return userData.getQuestions().entrySet().parallelStream().filter(mapEntry -> mapEntry.getValue()
+                .getLastQuestionDifficulty() == difficulty).map(mapEntry -> mapEntry.getKey())
+                .filter(questionId -> !questionId.equals(lastQuestionID)).collect(Collectors.toList());
     }
-
-    // Einträge von einem bestimmten Zeitpunkt bis todate zurück geben
 
     /**
      * Gibt eine Liste an Einträgen (Entry), die nach dem übergebenen Zeitpunkt (epochTime) erstellt wurden, aus den userData zurück
@@ -76,8 +73,10 @@ public class UserDataUtils {
      * @return Liste an Einträgen nach den übergebenen Richtwerten {@link List<Entry>}
      */
     public static List<Entry> getEntriesToDate(UserData userData, long epochTime) {
-        return userData.getQuestions().values().parallelStream().flatMap(individualQuestion -> individualQuestion.getEntries().entrySet().stream())
-                .filter(mapEntry -> Long.parseLong(mapEntry.getKey()) >= epochTime).map(mapEntry -> mapEntry.getValue()).collect(Collectors.toList());
+        return userData.getQuestions().values().parallelStream()
+                .flatMap(individualQuestion -> individualQuestion.getEntries().entrySet().parallelStream())
+                .filter(mapEntry -> Long.parseLong(mapEntry.getKey()) >= epochTime)
+                .map(mapEntry -> mapEntry.getValue()).collect(Collectors.toList());
     }
 
     /**

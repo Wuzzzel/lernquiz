@@ -63,7 +63,7 @@ public class QuizAnswerIntentHandler implements RequestHandler {
         if (correct) {
             responseText = Constants.QUIZ_ANSWER_CORRECT_MESSAGE;
         } else {
-            String correctAnswer = quizItem.getAnswers().get(correctAnswerPosition);
+            String correctAnswer = quizItem.getAnswers().get(correctAnswerPosition - 1);
             responseText = Constants.QUIZ_ANSWER_WRONG_MESSAGE + " " + correctAnswer + "." + Constants.SSML_BREAK_PARAGRAPH;
         }
 
@@ -91,18 +91,22 @@ public class QuizAnswerIntentHandler implements RequestHandler {
      * @throws AskSdkException,            wenn der Inhalt eines Slots "?" gleicht
      * @throws AnswerOutOfBoundsException, wenn die Antwort des Nutzers größer als amountOfAnswers ist
      */
-    private boolean compareSlots(Map<String, Slot> slots, int amountOfAnswers, int correctAnswer) throws AskSdkException, AnswerOutOfBoundsException {
+    private boolean compareSlots(Map<String, Slot> slots, int amountOfAnswers, int correctAnswer)
+            throws AskSdkException, AnswerOutOfBoundsException {
         for (Slot slot : slots.values()) {
             if (slot.getValue() != null) {
                 int answerNumber = -1;
-                if (slot.getValue().equals("?")) //Kann vorkommen, wenn die Nutzer beispielsweise mit "Antwort ein" antworten
-                    throw new AskSdkException("Antwort des Nutzers konnte nicht erkannt werden."); //Dann Exception werfen
+                //Ein ? im slotvalue kann vorkommen, wenn die Nutzer beispielsweise mit "Antwort ein" antworten
+                if (slot.getValue().equals("?"))
+                    throw new AskSdkException("Antwort des Nutzers konnte nicht erkannt werden.");
                 if (slot.getName().equals("number"))
                     answerNumber = Integer.valueOf(slot.getValue()); //Antwort in Integer wandeln
                 if (slot.getName().equals("letter")) answerNumber = letterToInt(slot.getValue());
                 if (answerNumber == correctAnswer) return true;
-                if (answerNumber > amountOfAnswers) //Es gibt beispielsweise nur 3 Antwortmöglichkeiten, die Nutzer sagen aber "Antwort 4"
-                    throw new AnswerOutOfBoundsException("Antwort des Nutzers ist nicht in der Fragestellung enthalten.", amountOfAnswers);
+                //Es gibt beispielsweise nur 3 Antwortmöglichkeiten, die Nutzer sagen aber "Antwort 4":
+                if (answerNumber > amountOfAnswers)
+                    throw new AnswerOutOfBoundsException(
+                            "Antwort des Nutzers ist nicht in der Fragestellung enthalten.", amountOfAnswers);
             }
         }
         return false;
